@@ -1,0 +1,24 @@
+TextWindow.Write("Let's see who is the oldest!")
+Program.Delay(1000)
+TextWindow.Write("How old is John?:")
+Number_1=TextWindow.ReadNumber()
+TextWindow.Write("How old is Susie?:")
+Number_2=TextWindow.ReadNumber()
+TextWindow.Write("How old is Tanya?:")
+Number_3=Textwindow.ReadNumber()
+TextWindow.Write("How old is Josie?:")
+Number_4=Textwindow.ReadNumber()
+Program.Delay(2000)
+Largest_Number()
+TextWindow.WriteLine("The oldest is: " +Largest_Number)
+Sub Largest_Number
+  If(Number_1>Number_2 And Number_1>Number_3 And Number_1>Number_4) Then
+    Largest_Number = Number_1
+  ElseIf(Number_2>Number_1 and Number_2>Number_3 and Number_2>Number_4)Then
+    Largest_Number=Number_2
+  ElseIf(Number_3>Number_1 and Number_3>Number_2 and Number_3>Number_4) THen
+    Largest_Number=Number_3
+  Else
+    Largest_Number=Number_4
+  EndIf
+EndSub

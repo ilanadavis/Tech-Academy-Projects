@@ -1,0 +1,21 @@
+GraphicsWindow.Width=1000
+GraphicsWindow.Height=650
+GraphicsWindow.BackgroundColor="Black"
+A=1000
+B=1000
+For C=1 To 100000
+  D=Math.GetRandomNumber(3)
+  E=500
+  Program.Delay(.1)
+  F=30
+  If(D=1) Then
+    E=30
+    Program.Delay(.1)
+  EndIf
+  A=(A+E)/2
+  Program.Delay(.1)
+  B=(B+F)/2
+  Random_Color=GraphicsWindow.GetRandomColor()
+  GraphicsWindow.SetPixel(A,B,Random_Color)
+EndFor
+  

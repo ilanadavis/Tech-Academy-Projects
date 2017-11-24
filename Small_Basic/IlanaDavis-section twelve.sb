@@ -1,0 +1,13 @@
+GraphicsWindow.BrushColor="red"
+GraphicsWindow.DrawRectangle(100,200,100,200)
+GraphicsWindow.FillRectangle(100,200,100,200)
+GraphicsWindow.DrawEllipse(50,50,200,200)
+GraphicsWindow.BrushColor="yellow"
+Ellipse=Shapes.AddEllipse(40,70)
+GraphicsWindow.BrushColor="green"
+GraphicsWindow.FillEllipse(70,70,100,100)
+GraphicsWindow.BrushColor="blue"
+Shapes.AddTriangle(160,170,50,70,120,200)
+Shapes.Animate(Ellipse,200,200,1000)
+GraphicsWindow.BrushColor="purple"
+GraphicsWindow.FillTriangle(20,60,60,90,105,60)

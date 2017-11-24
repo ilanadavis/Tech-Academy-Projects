@@ -1,0 +1,13 @@
+GraphicsWindow.BackgroundColor="LightCyan"
+GraphicsWindow.PenColor="DarkSLateBlue"
+GraphicsWindow.Width=400
+GraphicsWindow.Height=400
+For A=1 To 200 Step 6
+  GraphicsWindow.DrawRectangle(200-A, 200-A, A*2, A*2)
+  Program.Delay(100)
+EndFor
+For A=1 To 200 Step 6
+  GraphicsWindow.DrawEllipse(200-A, 200-A, A*2, A*2)
+  Program.Delay(100)
+EndFor
+  

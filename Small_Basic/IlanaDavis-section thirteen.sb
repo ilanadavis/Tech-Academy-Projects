@@ -1,0 +1,9 @@
+TextWindow.Write("How many hours did you study today?:")'This allows the user to enter their hours'
+Hours=Textwindow.Read() 'This assigns what the user types to the variable Hours'
+TextWindow.Write("There's still more time today. It's only ") 'This prints text'
+PrintTime() 'This names the subroutine'
+Sub PrintTime 'This starts the subroutine'
+  TextWindow.WriteLine(Clock.Time) 'This accesses the computers clock and returns the time'
+EndSub 'This ends the subroutine'
+
+

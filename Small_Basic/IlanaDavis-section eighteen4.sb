@@ -1,0 +1,25 @@
+GraphicsWindow.Width=275
+Turtle.X=130
+Turtle.Y=400
+GraphicsWindow.PenColor="Green"
+Turtle.Move(150)
+Turtle.X=135
+Turtle.Y=400
+GraphicsWindow.PenColor="Green"
+Turtle.Move(150)
+Turtle.X=100
+Turtle.Y=200
+GraphicsWindow.PenColor="MediumVioletRed"
+Turns=200
+Length=300 / Turns
+Angle=400 / Turns
+Turtle.Speed=10
+For A=1 To 6
+  For B=1 To Turns
+    Turtle.Move(Length)
+    Turtle.Turn(Angle)
+  EndFor
+  Turtle.Turn(18)
+EndFor
+Turtle.X=(128.5)
+Turtle.Y=(193)

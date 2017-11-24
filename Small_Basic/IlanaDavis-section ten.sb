@@ -1,0 +1,14 @@
+Begin:
+A=10
+If A>6 Then
+  TextWindow.WriteLine("You Passed!")
+  Goto Begin
+EndIf
+
+
+amount=2
+While(Amount<4525)
+  TextWindow.WriteLine(Amount)
+  Amount=Amount*4
+EndWhile
+  

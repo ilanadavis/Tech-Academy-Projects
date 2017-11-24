@@ -1,0 +1,17 @@
+TextWindow.BackgroundColor= "red"
+TextWindow.ForegroundColor= "white"
+TextWindow.Pause()
+TextWindow.WriteLine("Hello World!")
+
+TextWindow.Write("What is your favorite food?:")
+Food = TextWindow.Read()
+TextWindow.WriteLine("Your favorite food is "+ Food +"! Yummy!")
+TextWindow.Write("Which city would you most like to visit?:")
+city = TextWindow.Read()
+TextWindow.WriteLine(city +  " sounds like a great place to visit! Don't forget to bring your computer with you!")
+
+TextWindow.Write("Why am I so cool?")
+TextWindow.Read()
+TextWindow.CursorTop=18
+TextWindow.Write("Anything I don't Care")
+TextWindow.CursorTop=1

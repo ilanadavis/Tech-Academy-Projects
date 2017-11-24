@@ -1,0 +1,20 @@
+TextWindow.Write("Do you like pizza?")
+pizza=TextWindow.Read()
+slices=6
+If(pizza="yes") Then
+  TextWindow.Write("How many friends do you have?")
+  Number=TextWindow.ReadNumber()
+  Remainder=Math.Remainder(number,slices)
+  Program.Delay(2000)
+  If(Number>slices) Then
+    TextWindow.WriteLine("You need more pizza!!")
+    Order=Math.ceiling(number/slices)
+    TextWindow.WriteLine("Order "+Order+" pizzas")
+  ElseIf(Remainder=0) Then
+    TextWindow.Writeline("There won't be anything left over")
+  ElseIf(remainder>0) then
+    TextWindow.WriteLine("Make sure you get a box. You'll have leftovers")
+  EndIf
+Else
+  TextWindow.Write("Me neither. Let's get some coffee.")
+EndIf

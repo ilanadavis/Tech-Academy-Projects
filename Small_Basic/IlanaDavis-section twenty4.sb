@@ -1,0 +1,23 @@
+Portland=Clock.Hour
+NYC=Clock.hour+3 
+London=Clock.Hour+8 'assuming not daylight savings time'
+If NYC>9 AND NYC<21 Then
+  TextWindow.WriteLine("NYC is open!")
+Else
+  TextWindow.WriteLine("NYC is closed!")
+EndIf
+If London>9 AND London<21 Then
+  TextWindow.WriteLine("London is open!")
+Else
+  TextWindow.WriteLine("London is closed!")
+EndIf
+If London>9 AND London<21 Then
+    TextWindow.WriteLine("London is open and file cannot transfer while open")
+  Else
+    File.CopyFile("C:\Users\Student\Desktop\New folder\Text Test20.3.txt","C:\Users\Student\Desktop\New folder (2)")  
+    TextWindow.WriteLine("London is closed, files transfered")
+EndIf
+
+
+
+

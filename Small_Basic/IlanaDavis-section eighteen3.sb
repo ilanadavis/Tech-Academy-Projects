@@ -1,0 +1,16 @@
+GraphicsWindow.Title="America!"
+GraphicsWindow.Width=1000
+GraphicsWindow.Height=600
+For A=1 To 100000
+  GraphicsWindow.BrushColor="Red"
+  B=Math.GetRandomNumber(1000)
+  C=Math.GetRandomNumber(1000)
+  GraphicsWindow.FillEllipse(B,C,4,4)
+EndFor
+For D=1 To 100000
+  GraphicsWindow.BrushColor="Blue"
+  B=Math.GetRandomNumber(500)
+  C=Math.GetRandomNumber(275)
+  GraphicsWindow.FillEllipse(b,C,4,4)
+EndFor
+  

@@ -1,0 +1,10 @@
+GraphicsWindow.Height=700
+GraphicsWindow.Width=900
+GraphicsWindow.PenWidth = 80
+GraphicsWindow.PenColor="Red"
+GraphicsWindow.DrawLine(450,0,450,450)
+GraphicsWindow.FontItalic= "true"
+GraphicsWindow.SetPixel(20,40,"Blue")
+GraphicsWindow.DrawBoundText(20,40,70,"One")
+GraphicsWindow.DrawBoundText(30,200,200,"Two")
+GraphicsWindow.DrawBoundText(40,400,150,"Three")

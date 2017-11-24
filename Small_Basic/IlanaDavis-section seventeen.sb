@@ -1,0 +1,15 @@
+User["John"]["Job"]="Programmer"
+User["John"]["Gender"]="Male"
+User["Sam"]["Job"]="C# Programmer"
+User["Sam"]["Gender"]="Female"
+User["Danielle"]["Job"]="UX Designer"
+User["Danielle"]["Gender"]="Female"
+User["Cat"]["Job"]="Graphics Designer"
+User["Cat"]["Gender"]="Female"
+TextWindow.Write("What is the user's name?:")
+Name= TextWindow.Read()
+TextWindow.WriteLine("Their job is: " +User[Name]["Job"])
+TextWindow.WriteLine("Their gender is: " +User[Name]["Gender"])
+
+
+  

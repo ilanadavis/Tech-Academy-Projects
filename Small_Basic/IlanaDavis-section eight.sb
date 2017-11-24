@@ -1,0 +1,8 @@
+If(5<10)Then
+  TextWindow.WriteLine("Five is less than 10.")
+EndIf
+
+If(3*5=15)Then
+  TextWindow.WriteLine("3*5=15")
+EndIf
+  

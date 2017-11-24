@@ -1,0 +1,33 @@
+GraphicsWindow.MouseMove=A
+GraphicsWindow.MouseDown=B
+GraphicsWindow.MouseUp=OnMouseUp
+GraphicsWindow.KeyDown=OnKeyDown
+GraphicsWindow.KeyUp=OnKeyUp
+GraphicsWindow.BackgroundColor="SkyBlue"
+GraphicsWindow.PenWidth=(25)
+Sub B
+  C=Graphicswindow.MouseX
+  D= GraphicsWindow.MouseY
+EndSub
+Sub A
+  E= GraphicsWindow.MouseX
+  F= GraphicsWindow.MouseY
+  If (Mouse.IsLeftButtonDown) Then
+    GraphicsWindow.PenColor=GraphicsWindow.GetRandomColor()
+    GraphicsWindow.DrawLine(C,D,E,F)
+  EndIf
+  C=E
+  D=F
+EndSub   
+Sub OnKeyDown
+  GraphicsWindow.BackgroundColor="Red"
+EndSub
+Sub OnKeyUp
+  GraphicsWindow.BackgroundColor="SkyBlue"
+EndSub
+Sub OnMouseUp
+  GraphicsWindow.Title="Thanks for playing!"
+EndSub
+
+
+  

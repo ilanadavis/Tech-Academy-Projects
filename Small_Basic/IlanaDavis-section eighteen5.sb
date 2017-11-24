@@ -1,0 +1,20 @@
+GraphicsWindow.BackgroundColor="DarkBlue"
+GraphicsWindow.Height=600
+GraphicsWindow.Width=605
+Rows=10
+Columns=10
+Sides=50
+For A=1 To Columns
+  For B=1 To Rows
+    GraphicsWindow.BrushColor=GraphicsWindow.GetRandomColor()
+    Squares[A][B]=Shapes.AddRectangle(sides, sides)
+    Shapes.Move(Squares[A][B], A*Sides, B*Sides)
+  EndFor
+EndFor
+For A=1 to Columns
+  For B=1 To Rows
+    Shapes.Animate(Squares[B][A], 275, 250, 1000)
+    Program.Delay(10)
+  EndFor
+EndFor
+  

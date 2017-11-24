@@ -1,0 +1,6 @@
+GraphicsWindow.BackgroundColor="Yellow"
+GraphicsWindow.PenColor="Purple"
+For x=1 To 4
+  Turtle.Move(150)
+  Turtle.Turn(90)
+EndFor 

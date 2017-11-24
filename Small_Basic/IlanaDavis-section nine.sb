@@ -1,0 +1,50 @@
+start:
+TextWindow.Write("Are you a vegan?:")
+Vegan=TextWindow.Read()
+If Vegan="Yes" Then
+  TextWindow.WriteLine("I know, you've told me already. Several times...")
+ElseIf Vegan="No" Then
+  TextWindow.WriteLine("Looks like meat is back on the menu!")
+Else
+  TextWindow.WriteLine("Please enter Yes or No.")
+  Goto start
+EndIf
+
+
+If (Clock.Hour <12) Then
+  TextWindow.WriteLine("It is a.m.")
+ElseIf (Clock.Hour >=12) then
+  TextWindow.WriteLine("It is p.m.")
+EndIf
+
+
+TextWindow.Write("Type a number that includes a decimal:")
+Number=TextWindow.ReadNumber()
+Program.Delay(1000)
+TextWindow.Write("Now we will round your number!...")
+Program.Delay(1000)
+TextWindow.Write("Your rounded number is: "+Math.Round(Number)+".")
+Program.Delay(1000)
+Remainder=Math.Remainder(Math.Round(Number),2)
+If(Remainder=0) Then
+  TextWindow.Writeline("This number is even!")
+  Program.Delay(1000)
+Else
+  TextWindow.WriteLine("This is an odd number!")
+  Program.Delay(1000)
+EndIf
+
+TextWindow.Write("Do you like beer?")
+beer=TextWindow.Read()
+If(beer="yes") Then
+  TextWindow.Write("How many have you had today?")
+  Number=TextWindow.ReadNumber()
+  Remainder=Math.Remainder(number,1)
+  Program.Delay(2000)
+  If(Remainder>3) Then
+    TextWindow.Writeline("Wow that is a lot!)
+  ElseIf(remainder<3) then
+    TextWindow.WriteLine("Have another!")
+ Else(beer="no") then
+    TextWindow.Write("Me neither. Let's get some coffee.")
+EndIf
