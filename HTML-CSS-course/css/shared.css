@@ -1,3 +1,9 @@
+/*================================================
+    Authour: Ilana Davis
+    
+==================================================
+    GENERIC STYLES
+==================================================*/
 html {
 	font-family: sans serif;
 	font-size: 62.5%;
@@ -19,6 +25,7 @@ footer,
 nav {
 	display: block;
 }
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -99,7 +106,6 @@ section {
 	margin-right: auto;
 	margin-left: auto;
 }
-
 .row {
 	margin-right: -15px;
 	margin-left: -15px;
@@ -138,6 +144,7 @@ section {
 	z-index: 100;
 	/* background-color: rgba(255,255,255,0.5); */
 }
+
 /* ===============================
 HOME SECTION STYLES
 =================================*/
@@ -196,7 +203,7 @@ CONTACT STYLES
 	padding: 10px;
 	border-radius: 8px;
 	margin: 0px auto;
-	background-color: rgba(100,65,0,0.3);
+	background-color: rgba(100,65,0,.3);
 	box-shadow: 2px 2px 10px 0 rgba(0,0,0,0.5);
 }
 
@@ -276,7 +283,7 @@ CONTACT STYLES
 }
 
 .reservation input[type="text"]:hover {
-	box-shadow: 0 0 18px rgba(100,65,0,0.8);
+	box-shadow: 0 0 18px rgba(100,65,0,.8);
 }
 
 .form-spacer {
@@ -296,14 +303,17 @@ CONTACT STYLES
 	cursor:pointer;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 600;
-	position: relative;
-	display: inline;
-	float: right;
 }
 
 .terms:hover {
 	color: orange;
 	text-decoration: underline;
+}
+
+.terms {
+	position: relative;
+	display: inline;
+	float: right;
 }
 
 .submit input[type="submit"] {
@@ -335,7 +345,7 @@ FOOTER STYLES
 =================================*/
 
 #footer {
-	background-color: rgba(100,65,0,0.3);
+	background-color: rgba(100,65,0,.3);
 	color: #000;
 	text-shadow: 2px 2px 8px 0 (0,0,0,0.4);
 	padding: 20px 50px 20px 50px;
