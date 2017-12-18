@@ -1,5 +1,4 @@
 function getReceipt() {
-	var text1 = "<h3>You Ordered:</h3>";
 	var runningTotal = 0;
 	var sizeTotal = 0;
 	var sizeArray = document.getElementsByClassName("size");
@@ -7,7 +6,6 @@ function getReceipt() {
     for (var i = 0; i < sizeArray.length; i++) {
         if (sizeArray[i].checked) {
             var selectedSize = sizeArray[i].value;
-            text1 = text1+selectedSize+"<br>";
         }
     } 
     
@@ -24,40 +22,48 @@ function getReceipt() {
     
     runningTotal = sizeTotal; 
     console.log(selectedSize+" = $"+sizeTotal+".00");
-    console.log("size text1: "+text1);
     console.log("subtotal: $"+runningTotal+".00");
     
     // TODO Add additional charges of variables
-    var proteinBox = getProtein(runningTotal); //names of proteins selected and dollar amounts for proteins
+    var proteinBox = getProtein(); //names of proteins selected and dollar amounts for proteins
 	var proteinLineItem = proteinBox[0]; //list of proteins selected
 	var proteinTotal = proteinBox[1]; //dollar amounts for proteins
 
-    var veggiesBox = getVeggies(runningTotal); //names of veggies selected and dollar amounts for veggies
+    var veggiesBox = getVeggies(); //names of veggies selected and dollar amounts for veggies
 	var veggiesLineItem = veggiesBox[0]; //list of veggies selected
 	var veggiesTotal = veggiesBox[1]; //dollar amounts for veggies
 
-    var cheeseBox = getCheese(runningTotal); //cheese selected and dollar amounts for cheese
+    var cheeseBox = getCheese(); //cheese selected and dollar amounts for cheese
     var selectedCheese = cheeseBox[0]; //selected cheese
     var cheeseTotal = cheeseBox[1]; //dollar amount for cheese
 
-    var crustBox = getCrust(runningTotal); //crust selected and dollar amounts for crust
+    var crustBox = getCrust(); //crust selected and dollar amounts for crust
     var selectedCrust = crustBox[0]; //selected crust
     var crustTotal = crustBox[1]; //dollar amount for crust
 
-    var sauceBox = getSauce(runningTotal); //sauce selected and dollar amounts for sauce
+    var sauceBox = getSauce(); //sauce selected and dollar amounts for sauce
     var selectedSauce = sauceBox[0]; //selected sauce
     var sauceTotal = sauceBox[1]; //dollar amount for sauce
 
     runningTotal = sizeTotal + proteinTotal + veggiesTotal + cheeseTotal + crustTotal + sauceTotal;
     console.log("Purchase Total: "+"$"+runningTotal+".00");
 
-	text1 = text1+proteinLineItem+"<br>"+veggiesLineItem+"<br>"+selectedCheese+"<br>"+selectedCrust+"<br>"+selectedSauce;
-	
-	document.getElementById("showText").innerHTML=text1;
+	var receiptTable = "<table>"
+	receiptTable+= writeReceipt(selectedSize, "$"+sizeTotal+".00");
+	receiptTable+= writeReceipt(proteinLineItem, "+$"+proteinTotal+".00");
+	receiptTable+= writeReceipt(veggiesLineItem, "+$"+veggiesTotal+".00");
+	receiptTable+= writeReceipt(selectedCheese, "+$"+cheeseTotal+".00");
+	receiptTable+= writeReceipt(selectedCrust, "+$"+crustTotal+".00");
+	receiptTable+= writeReceipt(selectedSauce, "+$"+sauceTotal+".00");	
+	receiptTable+= "</table>"
+	document.getElementById("showText").innerHTML="<h3>You Ordered:</h3>"+"<br>"+receiptTable;
+
 	document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
 }
-	
-function getProtein(runningTotal) {
+function writeReceipt(lineItem, linePrice) {
+	return "<tr><td>"+lineItem+"</td><td>"+linePrice+"</td></tr>"
+}
+function getProtein() {
 	var proteinTotal = 0;
 	var selectedProtein = [];
 	var proteinArray = document.getElementsByClassName("Protein");
@@ -78,7 +84,7 @@ function getProtein(runningTotal) {
 	return [selectedProtein.join(', '), proteinTotal];  // protein subtotal
 }	
 
-function getVeggies(runningTotal) {
+function getVeggies() {
 	var veggiesTotal = 0;
 	var selectedVeggies = [];
 	var veggiesArray = document.getElementsByClassName("Veggies");
@@ -99,7 +105,7 @@ function getVeggies(runningTotal) {
 	return [selectedVeggies.join(', '), veggiesTotal];  // veggies subtotal
 }
 
-function getCheese(runningTotal) {
+function getCheese() {
 	var cheeseTotal = 0;
 	var selectedCheese = document.querySelector('input[name = "Cheese"]:checked').value;
 	if (selectedCheese == "Extra Cheese") {
@@ -111,7 +117,7 @@ function getCheese(runningTotal) {
 	return [selectedCheese, cheeseTotal]; //cheese selection and cheese subtotal
 }	
 
-function getCrust(runningTotal) {
+function getCrust() {
 	var crustTotal = 0;
 	var selectedCrust = document.querySelector('input[name = "Crust"]:checked').value;
 	if (selectedCrust == "Cheese Stuffed Crust") {
@@ -123,7 +129,7 @@ function getCrust(runningTotal) {
 	return [selectedCrust, crustTotal];  // crust selection and crust subtotal
 }	
 
-function getSauce(runningTotal) {
+function getSauce() {
 	var sauceTotal = 0;
 	var selectedSauce = document.querySelector('input[name = "Sauce"]:checked').value;
 	if (selectedSauce == "") {
