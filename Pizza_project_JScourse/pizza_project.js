@@ -26,8 +26,15 @@ function getReceipt() {
     console.log(selectedSize+" = $"+sizeTotal+".00");
     console.log("size text1: "+text1);
     console.log("subtotal: $"+runningTotal+".00");
-    getProtein(runningTotal,text1);
-    getVeggies(runningTotal,text1);// All three of these variables will be passed on to each function
+    
+    // TODO Add additional charges of variables
+    var proteinTotal = getProtein(runningTotal,text1);
+    var veggiesTotal = getVeggies(runningTotal,text1);
+    runningTotal = sizeTotal + proteinTotal + veggiesTotal;
+    console.log("Purchase Total: "+"$"+runningTotal+".00");
+
+	document.getElementById("showText").innerHTML=text1;
+	document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
 }
 	
 function getProtein(runningTotal,text1) {
@@ -47,13 +54,10 @@ function getProtein(runningTotal,text1) {
 	} else {
 		proteinTotal = 0;
 	}
-	runningTotal += proteinTotal;
 	console.log("total selected protein items: "+proteinCount);
 	console.log(proteinCount+" protein - 1 free protein = "+"$"+proteinTotal+".00");
 	console.log("protein text1: "+text1);
-	console.log("Purchase Total: "+"$"+runningTotal+".00");
-	document.getElementById("showText").innerHTML=text1;
-	document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
+	return proteinTotal;  // protein subtotal
 }	
 
 function getVeggies(runningTotal,text1) {
@@ -73,11 +77,8 @@ function getVeggies(runningTotal,text1) {
 	} else {
 		veggiesTotal = 0;
 	}
-	runningTotal += veggiesTotal;
 	console.log("total selected veggie items: "+veggiesCount);
 	console.log(veggiesCount+" veggie - 1 free veggie = "+"$"+veggiesTotal+".00");
 	console.log("veggie text1: "+text1);
-	console.log("Purchase Total: "+"$"+runningTotal+".00");
-	document.getElementById("showText").innerHTML=text1;
-	document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
+	return veggiesTotal;  // veggies subtotal
 }	
