@@ -30,7 +30,9 @@ function getReceipt() {
     // TODO Add additional charges of variables
     var proteinTotal = getProtein(runningTotal,text1);
     var veggiesTotal = getVeggies(runningTotal,text1);
-    runningTotal = sizeTotal + proteinTotal + veggiesTotal;
+    var cheeseTotal = getCheese(runningTotal,text1);
+    var crustTotal = getCrust(runningTotal,text1);
+    runningTotal = sizeTotal + proteinTotal + veggiesTotal + cheeseTotal + crustTotal;
     console.log("Purchase Total: "+"$"+runningTotal+".00");
 
 	document.getElementById("showText").innerHTML=text1;
@@ -81,4 +83,30 @@ function getVeggies(runningTotal,text1) {
 	console.log(veggiesCount+" veggie - 1 free veggie = "+"$"+veggiesTotal+".00");
 	console.log("veggie text1: "+text1);
 	return veggiesTotal;  // veggies subtotal
+}
+
+function getCheese(runningTotal,text1) {
+	var cheeseTotal = 0;
+	var selectedCheese = document.querySelector('input[name = "Cheese"]:checked').value;
+	if (selectedCheese == "Extra Cheese") {
+		cheeseTotal = 3;
+	} else {
+		cheeseTotal = 0;
+	}
+	console.log("total selected cheese items: "+cheeseTotal);
+	console.log("cheese text1: "+text1);
+	return cheeseTotal;  // cheese subtotal
+}	
+
+function getCrust(runningTotal,text1) {
+	var crustTotal = 0;
+	var selectedCrust = document.querySelector('input[name = "Crust"]:checked').value;
+	if (selectedCrust == "Cheese Stuffed Crust") {
+		crustTotal = 3;
+	} else {
+	crustTotal = 0;
+	}
+	console.log("total selected crust items: "+crustTotal);
+	console.log("crust text1: "+text1);
+	return crustTotal;  // crust subtotal
 }	
