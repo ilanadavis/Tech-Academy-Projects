@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pizza Project</title>
+        <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+		<meta content="width=device-width,initial-scale=1.0" name="viewport">
+		<style>
+    		#menuBG{
+    		    width:400px;
+    		    height:470px;
+    		    margin:10px auto;
+    		    
+    		}
+    		#frmMenu{
+    		    width:400px;
+    		    height:200px;
+    		}
+		    #totalPrice{
+		        width:100%;
+		        height:190px;
+		        margin:0 auto;
+		        text-align:right;
+		    }
+		    .left{
+		        width:200px;
+		        height:200px;
+		        float:left;
+		    }
+    		.right{
+    		    width:200px;
+    		    height:200px;
+    		    float:right;
+    		}
+    		#showText{
+    		    width:100%;
+    		    margin:0px auto;
+    		}
+		    #cart{
+		        top:0;
+		        margin:0px auto;
+		        width:400px;
+		        height:200px;
+		    }
+		    #btnOrder{
+		        margin:10px 0px 0px 100px;
+		        width:100px;height:40px;
+		    }
+		</style>
+    </head>
+    <body>
+        <div id="menuBG">
+			<h1 style="margin:0 0px 0 20px;">Pizza Project</h1>
+			<form id="frmMenu">
+				<div class="menu left">
+					<h3>Size:</h3>
+					<input class="size" type="radio" name="Size" value="Personal Pizza"> Personal Pizza (4 slices)<br>
+					<input class="size" type="radio" name="Size" value="Medium Pizza"> Medium Pizza (6 slices)<br>
+					<input class="size" type="radio" name="Size" value="Large Pizza" checked> Large Pizza (10 slices)<br>
+					<input class="size" type="radio" name="Size" value="Extra Large Pizza"> Extra Large Pizza (12 slices)<br>
+				</div>
+				<div class="menu right">
+					<h3>Protein:</h3>
+					<input class="Protein" type="checkbox" name="Protein" value="Pepperoni"> Pepperoni<br>
+					<input class="Protein" type="checkbox" name="Protein" value="Sausage"> Sausage<br>
+					<input class="Protein" type="checkbox" name="Protein" value="Canadian Bacon"> Canadian Bacon<br> 
+					<input class="Protein" type="checkbox" name="Protein" value="Ground Beef"> Ground Beef<br>
+					<input class="Protein" type="checkbox" name="Protein" value="Anchovy"> Anchovy<br>
+					<input class="Protein" type="checkbox" name="Protein" value="Chicken"> Chicken<br>
+				</div>
+				<div class="menu left">
+					<h3>Cheese:</h3>
+					<input class="cheese" type="radio" name="Cheese" value="Regular Cheese" checked> Regular Cheese<br>
+					<input class="cheese" type="radio" name="Cheese" value="Extra Cheese"> Extra Cheese<br>
+					<input class="cheese" type="radio" name="Cheese" value="No Cheese"> No Cheese<br>
+				</div>
+				<div class="menu right">
+					<h3>Veggies:</h3>
+					<input class="Veggies" type="checkbox" name="Veggies" value="Tomatoes"> Tomatoes<br>
+					<input class="Veggies" type="checkbox" name="Veggies" value="Onions"> Onions<br>
+					<input class="Veggies" type="checkbox" name="Veggies" value="Green Peppers"> Green Peppers<br> 
+					<input class="Veggies" type="checkbox" name="Veggies" value="Mushrooms"> Mushrooms<br>
+					<input class="Veggies" type="checkbox" name="Veggies" value="Pineapple"> Pineapple<br>
+					<input class="Veggies" type="checkbox" name="Veggies" value="Spinach"> Spinach<br>
+					<input class="Veggies" type="checkbox" name="Veggies" value="Jalapeno"> Jalapeno<br>
+				</div>
+				<div class="menu right">
+					<h3>Crust:</h3>
+					<input class="Crust" type="radio" name="Crust" value="Plain Crust" checked> Plain Crust<br>
+					<input class="Crust" type="radio" name="Crust" value="Garlic Butter Crust"> Garlic Butter Crust<br>
+					<input class="Crust" type="radio" name="Crust" value="Cheese Stuffed Crust"> Cheese Stuffed Crust<br> 
+					<input class="Crust" type="radio" name="Crust" value="Spicy Crust"> Spicy Crust<br>
+					<input class="Crust" type="radio" name="Crust" value="House Special Crust"> House Special Crust<br>
+				</div>
+				<div class="menu left">
+					<h3>Sauce:</h3>
+					<input class="Sauce" type="radio" name="Sauce" value="Marinara sauce" checked> Marinara sauce<br>
+					<input class="Sauce" type="radio" name="Sauce" value="White sauce"> White sauce<br>
+					<input class="Sauce" type="radio" name="Sauce" value="Barbeque sauce"> Barbeque sauce<br> 
+					<input class="Sauce" type="radio" name="Sauce" value="No sauce"> No sauce<br>
+				</div>
+			<input id="btnOrder" type="button" onclick="getReceipt()" 
+				value="Place Order">
+				<div id="cart">
+					<div id="showText"></div>
+					<div id="totalPrice"></div>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript" src="pizza_project.js"></script>
+    </body>
+</html>
