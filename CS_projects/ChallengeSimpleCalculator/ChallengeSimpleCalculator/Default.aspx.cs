@@ -16,34 +16,34 @@ namespace ChallengeSimpleCalculator
 
         protected void addButton_Click(object sender, EventArgs e)
         {
-            int x = Int32.Parse(firstTextBox.Text);
-            int y = Int32.Parse(secondTextBox.Text);
-            int z = x + y;
-            resultsLabel.Text = z.ToString();
+            int firstNumber = Int32.Parse(firstTextBox.Text);
+            int secondNumber = Int32.Parse(secondTextBox.Text);
+            int result = firstNumber + secondNumber;
+            resultsLabel.Text = result.ToString();
         }
 
         protected void subtractButton_Click(object sender, EventArgs e)
         {
-            int x = Int32.Parse(firstTextBox.Text);
-            int y = Int32.Parse(secondTextBox.Text);
-            int z = x - y;
-            resultsLabel.Text = z.ToString();
+            int firstNumber = Int32.Parse(firstTextBox.Text);
+            int secondNumber = Int32.Parse(secondTextBox.Text);
+            int result = firstNumber - secondNumber;
+            resultsLabel.Text = result.ToString();
         }
 
         protected void multiplyButton_Click(object sender, EventArgs e)
         {
-            int x = Int32.Parse(firstTextBox.Text);
-            int y = Int32.Parse(secondTextBox.Text);
-            int z = x * y;
-            resultsLabel.Text = z.ToString();
+            int firstNumber = Int32.Parse(firstTextBox.Text);
+            int secondNumber = Int32.Parse(secondTextBox.Text);
+            int result = firstNumber * secondNumber;
+            resultsLabel.Text = result.ToString();
         }
 
         protected void divideButton_Click(object sender, EventArgs e)
         {
-            int x = Int32.Parse(firstTextBox.Text);
-            int y = Int32.Parse(secondTextBox.Text);
-            Decimal z = (Decimal) x / y;
-            resultsLabel.Text = z.ToString();
+            int firstNumber = Int32.Parse(firstTextBox.Text);
+            int secondNumber = Int32.Parse(secondTextBox.Text);
+            Decimal result = (Decimal) firstNumber / secondNumber;
+            resultsLabel.Text = result.ToString();
         }
     }
 }
