@@ -13,11 +13,11 @@ namespace ChallengeEpicSpies
         {
             if (!IsPostBack)
             {
-                Validate();
+                endOldAssignmentCalednar.SelectedDate = DateTime.Today;
+                startNewAssignmentCalednar.SelectedDate = DateTime.Today.AddDays(14);
+                endNewAssignmentCalednar.SelectedDate = DateTime.Today.AddDays(21);
             }
-            endOldAssignmentCalednar.VisibleDate = DateTime.Today;
-            startNewAssignmentCalednar.VisibleDate = DateTime.Today.AddDays(14);
-            endNewAssignmentCalednar.VisibleDate = DateTime.Today.AddDays(21);
+            Page.MaintainScrollPositionOnPostBack = true;
         }
 
         protected void endOldAssignmentCalednar_SelectionChanged(object sender, EventArgs e)
@@ -37,10 +37,39 @@ namespace ChallengeEpicSpies
 
         protected void assignSpyButton_Click(object sender, EventArgs e)
         {
-            if (DateTime.Today < DateTime.Today.AddDays(14))
+            double cost = 500; /* each day on assignment cost $500 */
+            double fee = 0; /* fee associated if over 21 days or 3 weeks */
+            double budget = 0;
+            double BetweenEndStart = (startNewAssignmentCalednar.SelectedDate - endOldAssignmentCalednar.SelectedDate).TotalDays;
+            double BetweenStartEnd = (endNewAssignmentCalednar.SelectedDate - startNewAssignmentCalednar.SelectedDate).TotalDays;
+
+            if (BetweenEndStart < 14)
+            {
                 resultLabel.Text = "Error: Must allow atleast two weeks between previous assignment and new assignment.";
+                //following sets the fault of the new assignment calendar back to 14 days from today. Showing the soonest possible date for the manager
+                DateTime earliestNewAssignment = endOldAssignmentCalednar.SelectedDate.AddDays(14);
+                startNewAssignmentCalednar.SelectedDate = earliestNewAssignment;
+                startNewAssignmentCalednar.VisibleDate = earliestNewAssignment;
+            }
+            else
+            {
+               if (BetweenStartEnd > 21)
+                {
+                    fee = 1000;
+                }
+                else
+                {
+                    fee = 0;
+                }
+
+               cost = cost * BetweenStartEnd;
+               budget = cost + fee;
+                resultLabel.Text = String.Format("Assignment of {0} to assignment {1} is authorized. Budget total: {2:C}", codeNameTextBox.Text, assignmentNameTextBox.Text, budget);
+                  // alternate resultlabel.text = "Assignment of " + codeNameTextBox.Text + " to assignment " + assignmentNameTextBox.Text + " is authorized. Budget total: " + budget;
+
+            }
+
         }
-        
-       // resultLabel.Text = "Assignment of " + codeNameTextBox + "to assignment " + assignmentNameTextBox + "is authorized. Budget total: "
+
     }
 }

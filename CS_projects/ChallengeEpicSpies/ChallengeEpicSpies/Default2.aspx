@@ -31,13 +31,19 @@
             <br />
             <br />
             End Date of Previous Assignment:
-            <asp:Calendar ID="endOldAssignmentCalednar" runat="server" OnSelectionChanged="endOldAssignmentCalednar_SelectionChanged"></asp:Calendar>
+            <asp:Calendar ID="endOldAssignmentCalednar" runat="server" OnSelectionChanged="endOldAssignmentCalednar_SelectionChanged">
+                <SelectedDayStyle BackColor="#CCCCCC" />
+            </asp:Calendar>
             <br />
             Start Date of New Assignment:
-            <asp:Calendar ID="startNewAssignmentCalednar" runat="server" OnSelectionChanged="startNewAssignmentCalednar_SelectionChanged"></asp:Calendar>
+            <asp:Calendar ID="startNewAssignmentCalednar" runat="server" OnSelectionChanged="startNewAssignmentCalednar_SelectionChanged">
+                <SelectedDayStyle BackColor="#CCCCCC" />
+            </asp:Calendar>
             <br />
             Projected End Date of New Assignment:
-            <asp:Calendar ID="endNewAssignmentCalednar" runat="server" OnSelectionChanged="endNewAssignmentCalednar_SelectionChanged"></asp:Calendar>
+            <asp:Calendar ID="endNewAssignmentCalednar" runat="server" OnSelectionChanged="endNewAssignmentCalednar_SelectionChanged">
+                <SelectedDayStyle BackColor="#CCCCCC" />
+            </asp:Calendar>
             <br />
             <br />
             <asp:Button ID="assignSpyButton" runat="server" OnClick="assignSpyButton_Click" Text="Assign Spy" />
