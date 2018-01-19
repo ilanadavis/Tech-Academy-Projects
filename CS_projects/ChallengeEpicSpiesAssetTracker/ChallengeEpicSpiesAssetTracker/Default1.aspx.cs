@@ -14,9 +14,9 @@ namespace ChallengeEpicSpiesAssetTracker
             if (!Page.IsPostBack)
             {
 
-                double[] rigged = new double[1];
-                double[] acts = new double[1];
-                string[] name = new string[1];
+                double[] rigged = new double[0];
+                double[] acts = new double[0];
+                string[] name = new string[0];
 
                 ViewState.Add("Elections Rigged", rigged);
                 ViewState.Add("Acts of Subterfuge", acts);
@@ -31,26 +31,30 @@ namespace ChallengeEpicSpiesAssetTracker
             double[] acts = (double[])ViewState["Acts of Subterfuge"];
             string[] name = (string[])ViewState["Asset Name"];
 
-            int elections = rigged.GetUpperBound(0);
-            int subterfuge = acts.GetUpperBound(0);
-         //   string asset = name.Last();
+            Array.Resize(ref rigged, rigged.Length + 1);
+            Array.Resize(ref acts, acts.Length + 1);
+            Array.Resize(ref name, name.Length + 1);
 
-            rigged[elections] = double.Parse(riggedTextBox.Text);
-            acts[subterfuge] = double.Parse(riggedTextBox.Text);
-           // asset = nameTextBox.Text;
+            int newrigged = rigged.GetUpperBound(0);
+            int newacts = acts.GetUpperBound(0);
+            int newasset = name.GetUpperBound(0);
 
-            resultLabel.Text = String.Format("Total Elections Rigged: {0}<br />Average Acts of Subterfuge per Asset: {1:N2}<br />(Last Asset you Added: {2}",
+            rigged[newrigged] = double.Parse(riggedTextBox.Text);
+            acts[newacts] = double.Parse(actsTextBox.Text);
+            name[newasset] = nameTextBox.Text;
+
+            ViewState["Elections Rigged"] = rigged;
+            ViewState["Acts of Subterfuge"] = acts;
+            ViewState["Asset Name"] = name;
+
+            riggedTextBox.Text = String.Empty;
+            actsTextBox.Text = String.Empty;
+            nameTextBox.Text = String.Empty;
+
+            resultLabel.Text = String.Format("Total Elections Rigged: {0}<br />Average Acts of Subterfuge per Asset: {1:N2}<br />(Last Asset you Added: {2})",
                 rigged.Sum(),
                 acts.Average(),
                 name.Last());
-
-
-            /*    Total Elections Rigged:
-                Average Acts of Subterfuge per Asset: 
-                (Last Asset you Added: )
-            */
-            //2 digits after decimal
-            //
         }
     }
 }
