@@ -27,8 +27,11 @@ namespace CS_ASP_032
                 heroHealth = performAttack(heroHealth, 20, "Monster", "Hero");
                 monsterHealth = performAttack(monsterHealth, 20, "Hero", "Monster");
 
-              //  monsterHealth = performAttack(heroHealth, 20, "Monster", "Hero", , 10);
-                
+                //  monsterHealth = performAttack(heroHealth, 20, "Monster", "Hero", , 10);
+               
+                //can name parameter using : to skip optional parameters
+                performAttack(heroHealth, 20, "Monster", "Hero", defenderArmorBonus: 10);
+                performAttack(attackerDamageMax: 20, defenderArmorBonus: 10, attackerName: "monster", defenderName: "Hero", defenderHealth: heroHealth);
             }
 
             displayResult(heroHealth, monsterHealth);
