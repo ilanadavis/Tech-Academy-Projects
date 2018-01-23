@@ -11,23 +11,49 @@ namespace MegaChallengeCasino
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            reelOne.ImageUrl = ImageDisplay();
-            reelTwo.ImageUrl = ImageDisplay();
-            reelThree.ImageUrl = ImageDisplay();
+            reelOne.ImageUrl = reelImageDisplay();
+            reelTwo.ImageUrl = reelImageDisplay();
+            reelThree.ImageUrl = reelImageDisplay();
         }
+        //image of reels are random
+        Random random = new Random();
+       
+        //player begins with 100
+        int playersMoney = 100;
 
 
-
-        public string ImageDisplay()
+        //images on the reels
+        public string reelImageDisplay()
             {
-            string[] images = new string[] { "images/Strawberry.png", "images/Bar.png", "images/Lemon.png", "images/Bell.png", "images/Clover.png", "images/Cherry.png", "images/Diamond.png", "images/Orange.", "images/Seven.png", "images/HorseShoe.png", "images/Plum.png", "images/Watermelon.png" };
-            Random random = new Random();
-            return images[random.Next(11)];
+            string[] reelImages = new string[] { "images/Strawberry.png", "images/Bar.png", "images/Lemon.png", "images/Bell.png", "images/Clover.png", "images/Cherry.png", "images/Diamond.png", "images/Orange.png", "images/Seven.png", "images/HorseShoe.png", "images/Plum.png", "images/Watermelon.png" };
+            return reelImages[random.Next(11)];
             }
-        protected void leverButton_Click(object sender, EventArgs e)
+
+        protected void betTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+
+        protected void leverButton_Click(object sender, EventArgs e)
+        {
+        }
+
+
+        private void displayResults(int betTextBox, int playersMoney)
+        {
+            if (reelImageDisplay() == "images/Bar.png")
+            {
+                resultLabel.Text = String.Format("Sorry, you lost {0:C}. Better luck next time.", betTextBox);
+            }
+            else
+            {
+                resultLabel.Text = String.Format("You bet {0:C} and won {1:C}!", betTextBox, playersMoney);
+            }
+        
+        }
+
+
     }
 }
 /*
@@ -43,8 +69,4 @@ Set players new money total.
 Calculate win/loss
 Persist it to viewstate
 
-Start with $100
-Reels are random
-Lose: Sorry, you lost $5.00. Better luck next time.
-Win: You bet $5.00 and won $10.00!
 */
