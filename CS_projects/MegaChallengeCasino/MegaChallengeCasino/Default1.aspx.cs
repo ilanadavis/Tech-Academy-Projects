@@ -20,6 +20,7 @@ namespace MegaChallengeCasino
        
         //player begins with 100
         int playersMoney = 100;
+        int betAmount = 0;
 
 
         //images on the reels
@@ -38,6 +39,30 @@ namespace MegaChallengeCasino
         protected void leverButton_Click(object sender, EventArgs e)
         {
         }
+
+        private void calculatePlayersMoney(double playersMoney, double playersBet)
+        {
+            if (betTextBox.Text.Trim().Length == 0)
+                return;
+
+            if (!Double.TryParse(betTextBox.Text, out betAmount))
+                return;
+
+            
+        }
+        //following code is to be deleted
+        private void calculateCups(double measureToCupRatio, string measureName)
+        {
+            if (quantityTextBox.Text.Trim().Length == 0)
+                return;
+
+            double quantity = 0.0;
+            if (!Double.TryParse(quantityTextBox.Text, out quantity))
+                return;
+
+            //define an input parameter called measureToCupRatio
+            double cups = quantity * measureToCupRatio;
+
 
 
         private void displayResults(int betTextBox, int playersMoney)
