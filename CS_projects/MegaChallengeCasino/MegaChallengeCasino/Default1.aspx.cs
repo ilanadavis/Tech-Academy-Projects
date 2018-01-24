@@ -18,9 +18,16 @@ namespace MegaChallengeCasino
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            reelOne.ImageUrl = reelImageDisplay();
-            reelTwo.ImageUrl = reelImageDisplay();
-            reelThree.ImageUrl = reelImageDisplay();
+            if (!Page.IsPostBack)
+            {
+
+                reelOne.ImageUrl = reelImageDisplay();
+                reelTwo.ImageUrl = reelImageDisplay();
+                reelThree.ImageUrl = reelImageDisplay();
+                ViewState.Add("Players Money", playersMoney);
+
+            }
+
         }
        
         //images on the reels
@@ -34,14 +41,19 @@ namespace MegaChallengeCasino
         {
 
         }
-
-
+        
         protected void leverButton_Click(object sender, EventArgs e)
         {
+
+            double[] playersMoney = (double[])ViewState["Players Money"];
+
+
+            winORlose(betAmount);
+
             reelOne.ImageUrl = reelImageDisplay();
             reelTwo.ImageUrl = reelImageDisplay();
             reelThree.ImageUrl = reelImageDisplay();
-            winORlose(betAmount);
+
         }
 
         private void calculatePlayersMoney(double playersMoney, double playersBet)
@@ -54,8 +66,6 @@ namespace MegaChallengeCasino
 
             //reels are randomly displayed at page open and when clicked
             //click button to play and change reels
-            //playersMoney keeps track of balance as money is added and subtracted
-            //results are displayed that shows if player won or lost and displays running balance for playersMoney
             
         }
 
@@ -112,9 +122,11 @@ namespace MegaChallengeCasino
             return counter;
         }
 
-
-        private void displayResults(double betTextBox, double playersMoney)
+        //results are displayed that shows if player won or lost and displays running balance for playersMoney
+        public void displayResults(double betTextBox, double playersMoney)
         {
+            ViewState["Players Money"] = playersMoney;
+
             if (reelImageDisplay() == "images/Bar.png")
             {
                 resultLabel.Text = String.Format("Sorry, you lost {0:C}. Better luck next time.", betTextBox);
@@ -123,8 +135,10 @@ namespace MegaChallengeCasino
             {
                 resultLabel.Text = String.Format("You bet {0:C} and won {1:C}!", betTextBox, playersMoney);
             }
-        
+
         }
+
+
 
 
     }
