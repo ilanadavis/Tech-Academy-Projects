@@ -66,10 +66,7 @@ namespace MegaChallengeCasino
             else
             {
                 //results are displayed that shows if player lost and displays running balance for playersMoney
-                if (playersMoney > 0)
-                {
-                    resultLabel.Text = String.Format("Sorry, you lost {0:C}. Better luck next time. You have {1:C} to bet.", betAmount, playersMoney);
-                }
+                resultLabel.Text = String.Format("Sorry, you lost {0:C}. Better luck next time. You have {1:C} to bet.", betAmount, playersMoney);
             }
             
             ViewState.Add("Players Money", playersMoney);
