@@ -62,14 +62,16 @@ namespace MegaChallengeCasino
             if (winORlose(betAmount))
             {
                 //results are displayed that shows if player won and displays running balance for playersMoney
-                resultLabel.Text = String.Format("You bet {0:C} and won {1:C}! You've got {2:C}!", betAmount, winnings, playersMoney);
+                resultLabel.Text = String.Format("You bet {0:C} and won {1:C}!", betAmount, winnings);
+                moneyLabel.Text = String.Format("Player's Money: {0:C}", playersMoney);
             }
             else
             {
                 //results are displayed that shows if player lost and displays running balance for playersMoney
-                resultLabel.Text = String.Format("Sorry, you lost {0:C}. Better luck next time. You have {1:C} to bet.", betAmount, playersMoney);
+                resultLabel.Text = String.Format("Sorry, you lost {0:C}. Better luck next time.", betAmount);
+                moneyLabel.Text = String.Format("Player's Money: {0:C}", playersMoney);
             }
-            
+
             ViewState.Add("Players Money", playersMoney);
             ViewState.Add("Bet Amount", betAmount);
         }
