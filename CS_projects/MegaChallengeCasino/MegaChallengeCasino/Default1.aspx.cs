@@ -19,22 +19,14 @@ namespace MegaChallengeCasino
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (betTextBox.Text.Trim().Length == 0)
-            {
-
-            }
-
-            else
+            if (!(betTextBox.Text.Trim().Length == 0))
             {
                 Double.TryParse(betTextBox.Text, out betAmount);
             }
+
             if (ViewState["Players Money"] != null)
             {
                 playersMoney = (double)ViewState["Players Money"];
-            }
-            else
-            {
-
             }
 
             if (!Page.IsPostBack)
@@ -42,14 +34,9 @@ namespace MegaChallengeCasino
                 reelOne.ImageUrl = reelImageDisplay();
                 reelTwo.ImageUrl = reelImageDisplay();
                 reelThree.ImageUrl = reelImageDisplay();
-
-
+                
                 ViewState.Add("Players Money", playersMoney);
                 ViewState.Add("Bet Amount", betAmount);
-
-            } else
-            {
-                //
             }
         }
        
@@ -62,25 +49,29 @@ namespace MegaChallengeCasino
 
         protected void betTextBox_TextChanged(object sender, EventArgs e)
         {
-
         }
         
         protected void leverButton_Click(object sender, EventArgs e)
         {
-
             reelOne.ImageUrl = reelImageDisplay();
             reelTwo.ImageUrl = reelImageDisplay();
             reelThree.ImageUrl = reelImageDisplay();
+
+            //display results based on if the player won or lost
             if (winORlose(betAmount))
             {
-                // won text
+                //results are displayed that shows if player won and displays running balance for playersMoney
                 resultLabel.Text = String.Format("You bet {0:C} and won! You've got {1:C}!", betAmount, playersMoney);
             }
             else
             {
-                // lost text
-                resultLabel.Text = String.Format("Sorry, you lost {0:C}. Better luck next time. You have {1:C} to bet.", betAmount, playersMoney);
+                //results are displayed that shows if player lost and displays running balance for playersMoney
+                if (playersMoney > 0)
+                {
+                    resultLabel.Text = String.Format("Sorry, you lost {0:C}. Better luck next time. You have {1:C} to bet.", betAmount, playersMoney);
+                }
             }
+            
             ViewState.Add("Players Money", playersMoney);
             ViewState.Add("Bet Amount", betAmount);
         }
@@ -88,12 +79,9 @@ namespace MegaChallengeCasino
         //if the player is a winner then add betAmount to playersMoney. Else subtract betAmount from playersMoney
         public bool winORlose(double betAmount)
         {
-
-
-            //reels with a bar lose
+            //reels with a bar lose the game
             if (anyReelMatch("images/Bar.png"))
             {
-//                displayResultLose(betAmount, playersMoney);
                 playersMoney = playersMoney - betAmount;
                 return false;
             }
@@ -102,28 +90,23 @@ namespace MegaChallengeCasino
             //reels with 3 cherries wins 4x bet
             else if (anyReelMatch("images/Cherry.png"))
             {
-//                displayResultsWin(betAmount, playersMoney);
                 playersMoney = playersMoney + ((countReelMatch("images/Cherry.png") + 1) * betAmount);
                 return true;
             }
             //reels with 3 7s wins 100x bet
             else if (allReelMatch("images/Seven.png"))
             {
-//                displayResultsWin(betAmount, playersMoney);
                 playersMoney = playersMoney + (betAmount * 100);
                 return true;
             }
             else
             {
-                //               displayResultLose(betAmount, playersMoney);
                 playersMoney = playersMoney - betAmount;
                 return false;
             }
-
-
-
         }
 
+        //check to see if reel images match one of the requirements below
         public bool anyReelMatch(string reelImageToMatch)
         {
             return (reelOne.ImageUrl == reelImageToMatch || reelTwo.ImageUrl == reelImageToMatch || reelThree.ImageUrl == reelImageToMatch);
@@ -133,7 +116,7 @@ namespace MegaChallengeCasino
             return (reelOne.ImageUrl == reelImageToMatch && reelTwo.ImageUrl == reelImageToMatch && reelThree.ImageUrl == reelImageToMatch);
         }
        
-        //check each reel indiv and if it matches, increment counter and return counter at the end
+        //check each reel indiv and if it matches, increment counter and return counter at the end. Used in winOrlose method
         public int countReelMatch(string reelImageToMatch)
         {
             int counter = 0;
@@ -151,54 +134,6 @@ namespace MegaChallengeCasino
             }
             return counter;
         }
-
-        //results are displayed that shows if player won and displays running balance for playersMoney
-        public void displayResultsWin (double betAmount, double playersMoney)
-        {
-            ViewState.Add("Players Money", playersMoney);
-            ViewState.Add("Bet Amount", betAmount);
-
-            resultLabel.Text = String.Format("You bet {0:C} and won {1:C}!", betAmount, playersMoney);
-
-        }
-        //results are displayed that shows if player lost and displays running balance for playersMoney
-        public void displayResultLose (double betAmount, double playersMoney)
-        {
-            ViewState.Add("Players Money", playersMoney);
-            ViewState.Add("Bet Amount", betAmount);
-
-            resultLabel.Text = String.Format("Sorry, you lost {0:C}. Better luck next time. You have {1:C} to bet.", betAmount, playersMoney);
-
-        }
-
-        /* public void displayResults(double betAmount, double playersMoney)
-         {
-             ViewState["Players Money"] = playersMoney;
-
-             if (winORlose(betAmount) =  )
-             {
-            resultLabel.Text = String.Format("Sorry, you lost {0:C}. Better luck next time. You have {1:C} to bet.", betAmount, playersMoney);
-             }
-             else
-             {
-                 resultLabel.Text = String.Format("You bet {0:C} and won {1:C}!", betAmount, playersMoney);
-             }
-
-         }
-         */
     }
 }
-/*
-Enter number into betTextBox
-When button clicked, random image appears. 
 
-Determine the value of the pull.
- - bar
- - jackpot
- - cherries
-
-Set players new money total.
-Calculate win/loss
-Persist it to viewstate
-
-*/
