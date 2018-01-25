@@ -13,8 +13,9 @@ namespace MegaChallengeCasino
         Random random = new Random();
 
         //player begins with 100
-       double playersMoney = 100;
-       double betAmount = 0;
+        double playersMoney = 100;
+        double betAmount = 0;
+        double winnings = 0;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -61,7 +62,7 @@ namespace MegaChallengeCasino
             if (winORlose(betAmount))
             {
                 //results are displayed that shows if player won and displays running balance for playersMoney
-                resultLabel.Text = String.Format("You bet {0:C} and won! You've got {1:C}!", betAmount, playersMoney);
+                resultLabel.Text = String.Format("You bet {0:C} and won {1:C}! You've got {2:C}!", betAmount, winnings, playersMoney);
             }
             else
             {
@@ -87,13 +88,13 @@ namespace MegaChallengeCasino
             //reels with 3 cherries wins 4x bet
             else if (anyReelMatch("images/Cherry.png"))
             {
-                playersMoney = playersMoney + ((countReelMatch("images/Cherry.png") + 1) * betAmount);
+                playersMoney = playersMoney + (winnings = (countReelMatch("images/Cherry.png") + 1) * betAmount);
                 return true;
             }
             //reels with 3 7s wins 100x bet
             else if (allReelMatch("images/Seven.png"))
             {
-                playersMoney = playersMoney + (betAmount * 100);
+                playersMoney = playersMoney + (winnings = betAmount * 100);
                 return true;
             }
             else
