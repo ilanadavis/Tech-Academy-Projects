@@ -12,7 +12,7 @@ namespace ChallengePhunWithStrings
         protected void Page_Load(object sender, EventArgs e)
         {
             // 1.  Reverse your name
-            string name = "Ilana Davis";
+            //string name = "Ilana Davis";
             // In my case, the result would be:
             // sivaD analI
             /* for (int i = name.Length - 1; i >= 0; i--)
@@ -24,16 +24,11 @@ namespace ChallengePhunWithStrings
             string names = "Luke,Leia,Han,Chewbacca";
             // When you're finished it should look like this:
             // Chewbacca,Han,Leia,Luke
-            string result = "";
-            string[] list = names.Split(',');
 
-            for (int i = 0; i < names.Length; i++)
-            {
-                result += names[i];
-            }
-            resultLabel.Text = result;
+            //string[] namesArray = names.Split(',');
+            //Array.Reverse(namesArray);
 
-
+            // resultLabel.Text = String.Join(",", namesArray);
 
 
             // 3. Use the sequence to create ascii art:
@@ -42,6 +37,16 @@ namespace ChallengePhunWithStrings
             // *****han******
             // **Chewbacca***
 
+
+            string[] namesArray = names.Split(',');
+          
+           // for (int i = 0; i <= names.Length; i--)
+            {
+                resultLabel.Text += names;
+            }
+
+
+           // resultLabel.Text = namesArray.PadLeft(30, '#');
 
 
 
