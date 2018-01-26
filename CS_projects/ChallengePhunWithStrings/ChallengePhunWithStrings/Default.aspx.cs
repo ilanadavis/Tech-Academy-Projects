@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -39,22 +40,38 @@ namespace ChallengePhunWithStrings
             // **Chewbacca***  2,9,3
 
             
-            string[] split = names.Split(new Char[] { ' ', ',', '.', ':', '\t' });
+            string[] split = names.Split(',');
+            /*string result = "";
+            for (int i = 0; i < split.Length; i++)
+            {
+                int padLeft = (14 - split[i].Length) / 2;
+                string temp = split[i].PadLeft(split[i].Length + padLeft, '*');
+                result += temp.PadRight(14, '*');
+                result += "<br />";
+
+            }
+             resultLabel.Text = result;
+             */
+            //not padding Chewbacca correctly. Need to revisit. 
+            /*
             foreach (string s in split)
             {
-
-                if (s.Trim() != "")
-                    resultLabel.Text += s.ToString().PadRight(((14 - split.Length) / 2) + split.Length,'*').PadLeft(14, '*') + "<br />";
+                resultLabel.Text += s.ToString().PadRight(((14 - split.Length) / 2) + split.Length,'*').PadLeft(14, '*') + "<br />";
             }
-            //not padding Chewbacca correctly. Need to revisit. 
+            */
 
-        // 4. Solve this puzzle:
+            // 4. Solve this puzzle:
 
-        string puzzle = "NOW IS ZHEremove-me ZIME FOR ALL GOOD MEN ZO COME ZO ZHE AID OF ZHEIR COUNZRY.";
-
+            string puzzle = "NOW IS ZHEremove-me ZIME FOR ALL GOOD MEN ZO COME ZO ZHE AID OF ZHEIR COUNZRY.";
+            
             // Once you fix it with string helper methods, it should read:
             // Now is the time for all good men to come to the aid of their country.
 
+
+            string firstLetterUpper = puzzle.Substring(0, 1);
+            string sentence = puzzle.Remove(9, 9).Replace("Z", "T").ToLower(new CultureInfo("en-US", false)).Substring(1);
+            resultLabel.Text = firstLetterUpper + sentence;
+            
         }
     }
 }
