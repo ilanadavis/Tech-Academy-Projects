@@ -9,21 +9,22 @@ namespace ChallengeHeroMonsterClassesPart1
 {
     public partial class Default1 : System.Web.UI.Page
     {
-        public void characterStats(Character hero, Character monster)
+        public void characterStats(Character character)
         {
-            resultLabel.Text = string.Format("Hero's health is {0} and Monster's health is {1}", hero.Health, monster.Health);
+            resultLabel.Text += string.Format("<p>Name: {0}, Health: {1}, DamageMaximum: {2}, AttackBonus: {3}", 
+                character.Name, character.Health, character.DamageMaximum, character.AttackBonus);
         }
     protected void Page_Load(object sender, EventArgs e)
         {
             Character hero = new Character();
-            hero.Name = "hero";
-            hero.Health = 100;
+            hero.Name = "Hero";
+            hero.Health = 30;
             hero.DamageMaximum = 15;
             hero.AttackBonus = 10;
 
             Character monster = new Character();
-            monster.Name = "monster";
-            monster.Health = 100;
+            monster.Name = "Monster";
+            monster.Health = 30;
             monster.DamageMaximum = 20;
             monster.AttackBonus = 5;
 
@@ -35,7 +36,8 @@ namespace ChallengeHeroMonsterClassesPart1
             int monsterDamage = monster.Attack();
             hero.Defend(monsterDamage);
 
-            characterStats(hero, monster);
+            characterStats(hero);
+            characterStats(monster);
         }
     }
 
