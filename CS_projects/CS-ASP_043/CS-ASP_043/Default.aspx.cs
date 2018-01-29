@@ -14,6 +14,8 @@ namespace CS_ASP_043
             //Car myCar = new Car();
             Car myCar = new Car("Oldsmobile", "Cutlas Supreme", 1985, "Silver");
             resultLabel.Text = myCar.FormatDetailsForDisplay();
+
+            DateTime d = new DateTime();
         }
     }
 }
