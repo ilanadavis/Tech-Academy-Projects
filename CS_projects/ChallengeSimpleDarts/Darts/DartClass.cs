@@ -9,31 +9,30 @@ namespace Darts
     public class Dart
     {
         System.Random random = new Random();
-        /*
+        
         public bool OuterDouble { get; set; }
         public bool InnerTriple { get; set; }
         public bool OuterBullseye { get; set; }
         public bool InnerBullseye { get; set; }
-
         public double Hit { get; set; }
-                */
+
 
         public double Throw()
         {
-            /*
+            
             OuterDouble = false;
             InnerTriple = false;
             OuterBullseye = false;
-            */
+            
             double dartThrow = 0;
 
             //The dart has an equal chance of scoring one through twenty, or the bullseye(0).
-            double hit = random.Next(0, 20);
+            Hit = random.Next(0, 20);
             double chance = random.Next(0,100);
-            if (hit >= 1 && hit <= 20)
+            if (Hit >= 1 && Hit <= 20)
             {
                 // For numbers 1 through 20, the dart has a five percent chance of landing in the outer band that represents a double score
-                dartThrow = hit;
+                dartThrow = Hit;
                 if (chance <= 5)
                 {
                     dartThrow = dartThrow * 2; //outer band
@@ -50,7 +49,7 @@ namespace Darts
                     dartThrow = dartThrow * 1;
                 }
             }
-            else if (hit < 1)
+            else if (Hit < 1)
             {
                 //There's only a five percent chance that the inner bullseye can be hit.
                 if (chance <= 5)

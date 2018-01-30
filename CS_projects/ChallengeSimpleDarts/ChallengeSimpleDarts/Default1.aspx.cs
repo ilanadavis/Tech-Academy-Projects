@@ -29,12 +29,12 @@ namespace ChallengeSimpleDarts
             double d = dart.Throw();
             resultLabel.Text = string.Format("Result {0}", d);
         }
-        /*
+ 
         public class Score
         {
 
         }
-        */
+
     }
 }
 
