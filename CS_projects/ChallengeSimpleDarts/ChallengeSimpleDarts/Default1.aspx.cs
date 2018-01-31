@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Darts;
 
+
 namespace ChallengeSimpleDarts
 {
     public partial class Default1 : System.Web.UI.Page
@@ -26,14 +27,16 @@ namespace ChallengeSimpleDarts
         {
             //When you call the Throw() method it will simulate the act of throwing a dart at a dart board.
             Dart dart = new Dart();
-            double d = dart.Throw();
+            //double d = 
+                dart.Throw();
+
+            double d = Score.scoreDart(dart);
+
+
+
             resultLabel.Text = string.Format("Result {0}", d);
         }
  
-        public class Score
-        {
-
-        }
 
     }
 }
