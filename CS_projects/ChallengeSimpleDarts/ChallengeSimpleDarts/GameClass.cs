@@ -8,15 +8,33 @@ namespace ChallengeSimpleDarts
 {
     public class GameClass
     {
-        Dart dartOne = new Dart();
+        System.Random random = new Random();
 
         public double Player1()
         {
+            Dart dartOne = new Dart(random);
+            Dart dartTwo = new Dart(random);
+            Dart dartThree = new Dart(random);
+
             dartOne.Throw();
-            return Score.scoreDart(dartOne);
+            dartTwo.Throw();
+            dartThree.Throw();
+            return (Score.scoreDart(dartOne) + Score.scoreDart(dartTwo) + Score.scoreDart(dartThree));
         }
 
-        
+        public double Player2()
+        {
+            Dart dartOne = new Dart(random);
+            Dart dartTwo = new Dart(random);
+            Dart dartThree = new Dart(random);
+
+            dartOne.Throw();
+            dartTwo.Throw();
+            dartThree.Throw();
+            return (Score.scoreDart(dartOne) + Score.scoreDart(dartTwo) + Score.scoreDart(dartThree));
+
+        }
+
     }
 }
 

@@ -22,8 +22,9 @@ namespace ChallengeSimpleDarts
 
             GameClass Game = new GameClass();
             double resultPlayer1 = Game.Player1();
+            double resultPlayer2 = Game.Player2();
 
-            resultLabel.Text = string.Format("Result {0}", resultPlayer1);
+            resultLabel.Text = string.Format("<p>Player1: {0}<p>Player2: {1}", resultPlayer1, resultPlayer2);
         }
  
 
