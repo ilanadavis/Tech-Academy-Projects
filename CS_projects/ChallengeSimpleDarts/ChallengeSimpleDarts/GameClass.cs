@@ -6,8 +6,11 @@ using Darts;
 
 namespace ChallengeSimpleDarts
 {
+
     public class GameClass
     {
+
+
         System.Random random = new Random();
 
         public double Player1()
