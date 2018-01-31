@@ -19,14 +19,11 @@ namespace ChallengeSimpleDarts
         protected void okButton_Click(object sender, EventArgs e)
         {
             //When you call the Throw() method it will simulate the act of throwing a dart at a dart board.
-            Dart dartOne = new Dart();
-            //dartOne.Throw();
-            //Score.scoreDart(dartOne);
-            //dartOne = Score.scoreDart(dartOne);
-            GameClass Game = new GameClass();
-            double result = Game.Player1();
 
-            resultLabel.Text = string.Format("Result {0}", result);
+            GameClass Game = new GameClass();
+            double resultPlayer1 = Game.Player1();
+
+            resultLabel.Text = string.Format("Result {0}", resultPlayer1);
         }
  
 

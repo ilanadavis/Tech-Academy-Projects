@@ -8,8 +8,6 @@ namespace ChallengeSimpleDarts
 {
     public class GameClass
     {
-        //public Dart Player1 { get; set; }
-        //public Dart Player2 { get; set; }
         Dart dartOne = new Dart();
 
         public double Player1()
@@ -18,20 +16,7 @@ namespace ChallengeSimpleDarts
             return Score.scoreDart(dartOne);
         }
 
-        /*
-        public Dart RoundOne()
-        {
-            dartOne.Throw();
-            scoreOne = Score.scoreDart(dartOne);
-            return dartOne;
-
-        }
-        public void RoundTwo()
-        {
-            Score.scoreDart(dart);
-
-        }
-        */
+        
     }
 }
 
