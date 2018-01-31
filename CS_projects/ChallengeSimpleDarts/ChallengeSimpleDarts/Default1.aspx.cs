@@ -13,28 +13,20 @@ namespace ChallengeSimpleDarts
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            Score results = new Score();
-            results.OuterDouble = dartThrow * 2;
-            results.InnerTriple = dartThrow * 3;
-            results.OuterBullseye = 25;
-            results.InnerBullseye = 50;
-            */
             
         }
 
         protected void okButton_Click(object sender, EventArgs e)
         {
             //When you call the Throw() method it will simulate the act of throwing a dart at a dart board.
-            Dart dart = new Dart();
-            //double d = 
-                dart.Throw();
+            Dart dartOne = new Dart();
+            //dartOne.Throw();
+            //Score.scoreDart(dartOne);
+            //dartOne = Score.scoreDart(dartOne);
+            GameClass Game = new GameClass();
+            double result = Game.Player1();
 
-            double d = Score.scoreDart(dart);
-
-
-
-            resultLabel.Text = string.Format("Result {0}", d);
+            resultLabel.Text = string.Format("Result {0}", result);
         }
  
 

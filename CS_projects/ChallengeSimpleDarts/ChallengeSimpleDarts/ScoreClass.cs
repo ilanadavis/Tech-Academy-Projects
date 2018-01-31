@@ -10,28 +10,28 @@ namespace ChallengeSimpleDarts
     {
         public static double score = 0;
         
-        public static double scoreDart(Dart dart)
+        public static double scoreDart(Dart dartOne)
         {
 
-            if (dart.OuterDouble)
+            if (dartOne.OuterDouble)
             {
-                score = dart.Hit * 2;
+                score = dartOne.Hit * 2;
             }
-            else if (dart.InnerTriple == true)
+            else if (dartOne.InnerTriple == true)
             {
-                score = dart.Hit * 3;
+                score = dartOne.Hit * 3;
             }
-            else if (dart.OuterBullseye == true)
+            else if (dartOne.OuterBullseye == true)
             {
                 score = 25;
             }
-            else if (dart.InnerBullseye == true)
+            else if (dartOne.InnerBullseye == true)
             {
                 score = 50;
             }
             else
             {
-                score = dart.Hit;
+                score = dartOne.Hit;
             }
             return score;
         }     

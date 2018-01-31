@@ -25,7 +25,7 @@ namespace Darts
             OuterBullseye = false;
             
             double dartThrow = 0;
-
+            
             //The dart has an equal chance of scoring one through twenty, or the bullseye(0).
             Hit = random.Next(0, 20);
             double chance = random.Next(0,100);
@@ -59,6 +59,7 @@ namespace Darts
                 }
             }
             return Hit;
+
         }
     }
     
