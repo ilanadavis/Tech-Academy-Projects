@@ -20,6 +20,7 @@ namespace CS_ASP_046
             this.Color = "Undefined";
         }
 
+        /*
         //Overloaded constructor
         public Car(string make, string model, int year, string color)
         {
@@ -28,7 +29,7 @@ namespace CS_ASP_046
             this.Year = year;
             this.Color = color;
         }
-
+        */
 
         public string FormatDetailsForDisplay()
         {

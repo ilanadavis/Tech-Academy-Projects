@@ -13,15 +13,30 @@ namespace CS_ASP_046
         {
             string result = "";
 
+            /*
             Car car1 = new Car("BMW", "528i", 2010, "Black");
             Car car2 = new Car("BMW", "745li", 2005, "Black");
-            Car car3 = new Car("Ford", "EScape", 2008, "White");
-
+            Car car3 = new Car("Ford", "Escape", 2008, "White");
+            */
+            
             List<Car> cars = new List<Car>();
 
+            //Create new isntance of a car class but not give it a local variable name
+            cars.Add(new Car { Make = "BMW", Model = "528i", Color = "Black", Year = 2010 });
+            cars.Add(new Car { Make = "BMW", Model = "745li", Color = "Black", Year = 2005 });
+            cars.Add(new Car { Make = "Ford", Model = "Escape", Color = "White", Year = 2008 });
+
+            for (int i = 0; i < cars.Count; i++)
+            {
+                result += cars.ElementAt(i).FormatDetailsForDisplay();
+            }
+
+            /*
             cars.Add(car1);
             cars.Add(car2);
             cars.Add(car3);
+            */
+
 
             //Find all cars where color of car is white and when return, return as list of car
             //List<Car> whiteCars = cars.FindAll(p => p.Color == "White");
@@ -29,7 +44,7 @@ namespace CS_ASP_046
             //able to chancge all cars color to Silver
             //cars.ForEach(p => p.Color = "Silver");
 
-
+            /*
             if (cars.Exists(p => p.Year == 2008))
                 result += "We do have a 2008 model year in stock!";
 
@@ -37,7 +52,7 @@ namespace CS_ASP_046
             {
                 result += cars.ElementAt(i).FormatDetailsForDisplay();
             }
-
+            */
 
             resultLabel.Text = result;
         }
