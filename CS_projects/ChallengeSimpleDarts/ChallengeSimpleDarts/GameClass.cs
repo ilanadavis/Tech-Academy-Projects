@@ -10,10 +10,12 @@ namespace ChallengeSimpleDarts
     public class GameClass
     {
         System.Random random = new Random();
+        public string Player_1 = "Player 1";
+        public string Player_2 = "Player 2";
 
         public double player1Score = 0;
         public double player2Score = 0;
-
+        
         public double Player1()
         {
             Dart dartOne = new Dart(random);
@@ -41,7 +43,8 @@ namespace ChallengeSimpleDarts
             addplayer2Score(roundScorePlayer2);
             return roundScorePlayer2;
         }
-        //Player 1
+
+        //Player 1 track score
         public void putplayer1Score(double prevScorePlayer1)
         {
             player1Score = prevScorePlayer1;
@@ -51,7 +54,8 @@ namespace ChallengeSimpleDarts
         {
             player1Score = player1Score + newScorePlayer1;
         }
-        //Player 2
+        
+        //Player 2 track score
         public void putplayer2Score(double prevScorePlayer2)
         {
             player2Score = prevScorePlayer2;
@@ -62,7 +66,28 @@ namespace ChallengeSimpleDarts
             player2Score = player2Score + newScorePlayer2;
         }
 
+        public string displayResults()
+        {
+            if (player1Score >= 300 && player2Score >= 300)
+            {
+                return "Both Player 1 and Player 2 wins";
+            }
+            else if (player1Score >= 300)
+            {
+                return "Player 1";
+            }
+            else if (player2Score >= 300)
+            {
+                return "Player 2";
+            }
+            else
+            {
+                return "First player to 300 wins!";
+            }
+            
+        }
     }
+
 }
 
 /*
