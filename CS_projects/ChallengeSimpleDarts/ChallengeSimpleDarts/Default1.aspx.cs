@@ -31,20 +31,20 @@ namespace ChallengeSimpleDarts
         protected void okButton_Click(object sender, EventArgs e)
         {
             //When you call the Throw() method it will simulate the act of throwing a dart at a dart board.
-            double player1Score = (double)ViewState["Player1 Results"];
-            double player2Score = (double)ViewState["Player2 Results"];
 
             GameClass Game = new GameClass();
+            Game.putplayer1Score((double)ViewState["Player1 Results"]);
+            Game.putplayer2Score((double)ViewState["Player2 Results"]);
+
+
             double resultPlayer1 = Game.Player1();
             double resultPlayer2 = Game.Player2();
 
-            double totalScorePlayer1 = player1Score + resultPlayer1;
-            ViewState["Player1 Results"] = totalScorePlayer1;
+            ViewState["Player1 Results"] = Game.player1Score;
 
-            double totalScorePlayer2 = player2Score + resultPlayer2;
-            ViewState["Player2 Results"] = totalScorePlayer2;
+            ViewState["Player2 Results"] = Game.player2Score;
 
-            resultLabel.Text = string.Format("<p>Player1 this round: {0}  Player1 total {2}<p>Player2 this round: {1}   Player 2 total {3}",resultPlayer1, resultPlayer2, totalScorePlayer1, totalScorePlayer2);
+            resultLabel.Text = string.Format("<p>Player1 this round: {0}  Player1 total {2}<p>Player2 this round: {1}   Player 2 total {3}",resultPlayer1, resultPlayer2, Game.player1Score, Game.player2Score);
         }
  
 

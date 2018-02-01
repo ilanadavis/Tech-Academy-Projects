@@ -9,9 +9,10 @@ namespace ChallengeSimpleDarts
 
     public class GameClass
     {
-
-
         System.Random random = new Random();
+
+        public double player1Score = 0;
+        public double player2Score = 0;
 
         public double Player1()
         {
@@ -22,7 +23,9 @@ namespace ChallengeSimpleDarts
             dartOne.Throw();
             dartTwo.Throw();
             dartThree.Throw();
-            return (Score.scoreDart(dartOne) + Score.scoreDart(dartTwo) + Score.scoreDart(dartThree));
+            double roundScorePlayer1 =  (Score.scoreDart(dartOne) + Score.scoreDart(dartTwo) + Score.scoreDart(dartThree));
+            addplayer1Score(roundScorePlayer1);
+            return roundScorePlayer1;
         }
 
         public double Player2()
@@ -34,8 +37,29 @@ namespace ChallengeSimpleDarts
             dartOne.Throw();
             dartTwo.Throw();
             dartThree.Throw();
-            return (Score.scoreDart(dartOne) + Score.scoreDart(dartTwo) + Score.scoreDart(dartThree));
+            double roundScorePlayer2 = (Score.scoreDart(dartOne) + Score.scoreDart(dartTwo) + Score.scoreDart(dartThree));
+            addplayer2Score(roundScorePlayer2);
+            return roundScorePlayer2;
+        }
+        //Player 1
+        public void putplayer1Score(double prevScorePlayer1)
+        {
+            player1Score = prevScorePlayer1;
+        }
 
+        public void addplayer1Score(double newScorePlayer1)
+        {
+            player1Score = player1Score + newScorePlayer1;
+        }
+        //Player 2
+        public void putplayer2Score(double prevScorePlayer2)
+        {
+            player2Score = prevScorePlayer2;
+        }
+
+        public void addplayer2Score(double newScorePlayer2)
+        {
+            player2Score = player2Score + newScorePlayer2;
         }
 
     }
