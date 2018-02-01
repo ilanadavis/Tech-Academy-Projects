@@ -10,14 +10,15 @@ namespace ChallengeSimpleDarts
     public class GameClass
     {
         System.Random random = new Random();
-        public string Player_1 = "Player 1";
-        public string Player_2 = "Player 2";
+        //public string Player_1 = "Player 1";
+        //public string Player_2 = "Player 2";
 
         public double player1Score = 0;
         public double player2Score = 0;
         
         public double Player1()
         {
+            
             Dart dartOne = new Dart(random);
             Dart dartTwo = new Dart(random);
             Dart dartThree = new Dart(random);
@@ -25,6 +26,7 @@ namespace ChallengeSimpleDarts
             dartOne.Throw();
             dartTwo.Throw();
             dartThree.Throw();
+            
             double roundScorePlayer1 =  (Score.scoreDart(dartOne) + Score.scoreDart(dartTwo) + Score.scoreDart(dartThree));
             addplayer1Score(roundScorePlayer1);
             return roundScorePlayer1;
@@ -32,18 +34,20 @@ namespace ChallengeSimpleDarts
 
         public double Player2()
         {
-            Dart dartOne = new Dart(random);
-            Dart dartTwo = new Dart(random);
-            Dart dartThree = new Dart(random);
+            
+             Dart dartOne = new Dart(random);
+             Dart dartTwo = new Dart(random);
+             Dart dartThree = new Dart(random);
 
-            dartOne.Throw();
-            dartTwo.Throw();
-            dartThree.Throw();
+             dartOne.Throw();
+             dartTwo.Throw();
+             dartThree.Throw();
+    
             double roundScorePlayer2 = (Score.scoreDart(dartOne) + Score.scoreDart(dartTwo) + Score.scoreDart(dartThree));
             addplayer2Score(roundScorePlayer2);
             return roundScorePlayer2;
         }
-
+        
         //Player 1 track score
         public void putplayer1Score(double prevScorePlayer1)
         {
@@ -66,19 +70,20 @@ namespace ChallengeSimpleDarts
             player2Score = player2Score + newScorePlayer2;
         }
 
+        //Winner display
         public string displayResults()
         {
             if (player1Score >= 300 && player2Score >= 300)
             {
-                return "Both Player 1 and Player 2 wins";
+                return "Both Player 1 and Player 2 wins <p><h3>Game Over</h3>";
             }
             else if (player1Score >= 300)
             {
-                return "Player 1";
+                return "Player 1<p><h3>Game Over</h3>";
             }
             else if (player2Score >= 300)
             {
-                return "Player 2";
+                return "Player 2<p><h3>Game Over</h3>";
             }
             else
             {

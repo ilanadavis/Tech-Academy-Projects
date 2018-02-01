@@ -13,8 +13,6 @@ namespace ChallengeSimpleDarts
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            System.Text.StringBuilder sb = new System.Text.StringBuilder();
-
             //if viewstate has data use or use reset
             if (ViewState["Player1 Results"] == null)
             {
@@ -42,9 +40,7 @@ namespace ChallengeSimpleDarts
             ViewState["Player1 Results"] = Game.player1Score;
             ViewState["Player2 Results"] = Game.player2Score;
             
-            
-
-            resultLabel.Text = string.Format("<p>Player1 this round: {0} Player1 total {2}<p>Player2 this round: {1} Player 2 total {3}<p>Winner:{4}", 
+            resultLabel.Text = string.Format("<p>Player1 this round: {0} Player1 total {2}<p>Player2 this round: {1} Player 2 total {3}<p>Winner: {4}", 
             resultPlayer1, resultPlayer2, Game.player1Score, Game.player2Score, Game.displayResults());
         }
     }

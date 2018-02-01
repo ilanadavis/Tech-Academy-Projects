@@ -34,8 +34,8 @@ namespace Darts
             double dartThrow = 0;
             
             //The dart has an equal chance of scoring one through twenty, or the bullseye(0).
-            Hit = random.Next(0, 20);
-            double chance = random.Next(0,100);
+            Hit = random.Next(0, 21);
+            double chance = random.Next(1,101);
             if (Hit >= 1 && Hit <= 20)
             {
                 // For numbers 1 through 20, the dart has a five percent chance of landing in the outer band that represents a double score
