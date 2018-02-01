@@ -18,13 +18,23 @@ namespace CS_ASP_046
             Car car2 = new Car("BMW", "745li", 2005, "Black");
             Car car3 = new Car("Ford", "Escape", 2008, "White");
             */
-            
+
+            /*
             List<Car> cars = new List<Car>();
 
-            //Create new isntance of a car class but not give it a local variable name
+            //Create new isntance of a car class but not give it a local variable name (object initializers)
             cars.Add(new Car { Make = "BMW", Model = "528i", Color = "Black", Year = 2010 });
             cars.Add(new Car { Make = "BMW", Model = "745li", Color = "Black", Year = 2005 });
             cars.Add(new Car { Make = "Ford", Model = "Escape", Color = "White", Year = 2008 });
+            */
+
+            //create new instance of a generic collection and initialize it immediately (collection initializers)
+            List<Car> cars = new List<Car>()
+            {
+                new Car {Make="BMW", Model = "528i", Color = "Black", Year = 2010},
+                new Car { Make = "BMW", Model = "745li", Color = "Black", Year = 2005},
+                new Car { Make = "Ford", Model = "Escape", Color = "White", Year = 2008}
+            };
 
             for (int i = 0; i < cars.Count; i++)
             {
