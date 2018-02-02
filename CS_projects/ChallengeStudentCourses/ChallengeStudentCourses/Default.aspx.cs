@@ -84,7 +84,6 @@ namespace ChallengeStudentCourses
                 {
                     resultLabel.Text += String.Format("&nbsp;&nbsp;Course: {0} {1}<br/>", course.CourseId, course.Name);
                 }
-                
             }
         }
 
@@ -96,14 +95,62 @@ namespace ChallengeStudentCourses
          * each student and print out to the web page each Student's
          * info and the Courses the Student is enrolled in.
          */
-
-
-
-
-
+         
 
         protected void assignment3Button_Click(object sender, EventArgs e)
         {
+            Course course1 = new Course() { CourseId = 1, Name = "Math - 101", Students = null, };
+            Course course2 = new Course() { CourseId = 2, Name = "Math - 202", Students = null };
+            Course course3 = new Course() { CourseId = 3, Name = "English - 102", Students = null };
+            List<Course> courses = new List<Course>()
+            {
+                course1, course2, course3,
+            };
+
+
+            Student student1 = new Student() { StudentId = 1, Name = "Billy Joe", Courses = new List<Course> { course1, course2} };
+            Student student2 = new Student() { StudentId = 2, Name = "Don Johnson", Courses = new List<Course> { course1, course3 } };
+            Student student3 = new Student() { StudentId = 3, Name = "Sally Smith", Courses = new List<Course> { course2, course3 } };
+            List<Student> students = new List<Student>()
+            {
+                student1, student2, student3,
+            };
+
+            Grades grade1 = new Grades() { Grade = 89, Course = course1, Student = student1 };
+            Grades grade2 = new Grades() { Grade = 78, Course = course2, Student = student1 };
+            Grades grade3 = new Grades() { Grade = 98, Course = course1, Student = student2 };
+            Grades grade4 = new Grades() { Grade = 97, Course = course3, Student = student2 };
+            Grades grade5 = new Grades() { Grade = 73, Course = course2, Student = student3 };
+            Grades grade6 = new Grades() { Grade = 88, Course = course3, Student = student3 };
+            List<Grades> grades = new List<Grades>()
+            {
+                grade1, grade2, grade3, grade4, grade5, grade6,
+            };
+
+
+            student1.Grades = new List<Grades> { grade1, grade2 };
+            student2.Grades = new List<Grades> { grade3, grade4 };
+            student3.Grades = new List<Grades> { grade5, grade6 };
+
+
+            foreach (Student student in students)
+            {
+                resultLabel.Text += String.Format("Student: {0} {1}<br/>", student.StudentId, student.Name);
+                foreach (Course course in student.Courses)
+                {
+                    resultLabel.Text += String.Format("&nbsp;&nbsp;Enrolled In: {0} - ", course.Name);
+                    foreach (Grades grade in student.Grades)
+                    {
+                        if (grade.Course == course)
+                        {
+                            resultLabel.Text += String.Format("Grade: {0}<br/>", grade.Grade);
+                        }
+                    }
+                }
+                
+            }
+
+            
             /*
              * We need to keep track of each Student's grade (0 to 100) in a 
              * particular Course.  This means at a minimum, you'll need to add 
@@ -114,6 +161,6 @@ namespace ChallengeStudentCourses
              * print out each Course they are enrolled in and their grade.
              */
         }
-  
+
     }
 }

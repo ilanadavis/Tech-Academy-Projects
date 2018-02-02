@@ -10,12 +10,15 @@ namespace ChallengeStudentCourses
         public int StudentId { get; set; }
         public string Name { get; set; }
         public List<Course> Courses { get; set; }
+        public List<Grades> Grades { get; set; }
+
 
         public Student()
         {
             this.StudentId = 0;
             this.Name = "Name";
             this.Courses = Courses;
+            this.Grades = Grades;
         }
 
         //Overloaded constructor
@@ -24,18 +27,12 @@ namespace ChallengeStudentCourses
             this.StudentId = studentid;
             this.Name = name;
             this.Courses = Courses;
+            this.Grades = Grades;
         }
 
         public string FormatDetailsForDisplay()
         {
             return String.Format("&nbsp;&nbsp;Student: {1} - {0}<br/>", this.Name, this.StudentId);
-        }
-        /*
-        public string button2Display()
-        {
-            return String.Format("Student: {1} - {0}<br/>", this.StudentId, this.Name);
-        }
-        */
-        
+        }  
     }
 }
