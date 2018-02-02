@@ -66,21 +66,25 @@ namespace ChallengeStudentCourses
         protected void assignment2Button_Click(object sender, EventArgs e)
         {
 
+            Course course1 = new Course() { CourseId = 1, Name = "Math - 101", Students = null };
+            Course course2 = new Course() { CourseId = 2, Name = "Math - 202", Students = null };
+            Course course3 = new Course() { CourseId = 3, Name = "English - 102", Students = null };
+
+
             Dictionary<string, Student> students = new Dictionary<string, Student>();
-            students.Add("1", new Student { Name = "Billy Joe" });
-                //courses.Add(new Course() { CourseId = 1, Name = "Math - 101" });
-            students.Add("2", new Student { Name = "Don Johnson" });
-            students.Add("3", new Student { Name = "Sally Smith" });
+            students.Add("1", new Student { Name = "Billy Joe", Courses = new List<Course> { course1, course2 } });
+            students.Add("2", new Student { Name = "Don Johnson", Courses = new List<Course> { course1, course3 } });
+            students.Add("3", new Student { Name = "Sally Smith", Courses = new List<Course> { course2, course3 } });
 
 
             foreach (var student in students)
             {
                 resultLabel.Text += String.Format("Student: {1} - {0}<br/>", student.Value.Name, student.Key);
-                /*foreach (Student student in course.Students)
+                foreach (var course in student.Value.Courses)
                 {
-                    result += student.FormatDetailsForDisplay();
+                    resultLabel.Text += String.Format("&nbsp;&nbsp;Course: {0} {1}<br/>", course.CourseId, course.Name);
                 }
-                */
+                
             }
         }
 
