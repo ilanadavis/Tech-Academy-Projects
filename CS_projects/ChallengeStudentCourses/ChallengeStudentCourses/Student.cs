@@ -28,7 +28,14 @@ namespace ChallengeStudentCourses
 
         public string FormatDetailsForDisplay()
         {
-            return String.Format("&nbsp&nbspStudent: 1 - {0}<br/>", this.Name);
+            return String.Format("&nbsp&nbspStudent: {1} - {0}<br/>", this.Name, this.StudentId);
         }
+        /*
+        public string button2Display()
+        {
+            return String.Format("Student: {1} - {0}<br/>", this.StudentId, this.Name);
+        }
+        */
+        
     }
 }

@@ -16,15 +16,16 @@ namespace ChallengeStudentCourses
 
         protected void assignment1Button_Click(object sender, EventArgs e)
         {
+            
             string result = "";
 
-            Course course1 = new Course() { CourseId = 101, Name = "Math", Students = null };
-            Course course2 = new Course() { CourseId = 201, Name = "Math", Students = null };
-            Course course3 = new Course() { CourseId = 111, Name = "English", Students = null };
+            Course course1 = new Course() { CourseId = 1, Name = "Math - 101", Students = null };
+            Course course2 = new Course() { CourseId = 2, Name = "Math - 202", Students = null };
+            Course course3 = new Course() { CourseId = 3, Name = "English - 102", Students = null };
 
-            Student student1 = new Student() { StudentId = 3848, Name = "Billy Joe", Courses = new List<Course> { course1, course2 } };
-            Student student2 = new Student() { StudentId = 2340, Name = "Don Johnson", Courses = new List<Course> { course1, course3 } };
-            Student student3 = new Student() { StudentId = 4387, Name = "Sally Smith", Courses = new List<Course> { course2, course3 } };
+            Student student1 = new Student() { StudentId = 1, Name = "Billy Joe", Courses = new List<Course> { course1, course2 } };
+            Student student2 = new Student() { StudentId = 2, Name = "Don Johnson", Courses = new List<Course> { course1, course3 } };
+            Student student3 = new Student() { StudentId = 3, Name = "Sally Smith", Courses = new List<Course> { course2, course3 } };
 
             course1.Students = new List<Student> { student1, student2 };
             course2.Students = new List<Student> { student1, student3 };
@@ -51,7 +52,7 @@ namespace ChallengeStudentCourses
             }
             
             resultLabel.Text = result;
-
+      
             /*
              * Create a List of Courses (add three example Courses ...
              * make up the details).  Each Course should have at least two
@@ -60,23 +61,42 @@ namespace ChallengeStudentCourses
              * out the Course's details and the Students that are enrolled in
              * each Course.
              */
-
-
         }
 
         protected void assignment2Button_Click(object sender, EventArgs e)
         {
-            /*
-             * Create a Dictionary of Students (add three example Students
-             * ... make up the details).  Use the StudentId as the 
-             * key.  Each student must be enrolled in two Courses.  Use
-             * Object and Collection Initializers.  Then, iterate through
-             * each student and print out to the web page each Student's
-             * info and the Courses the Student is enrolled in.
-             */ 
+
+            Dictionary<string, Student> students = new Dictionary<string, Student>();
+            students.Add("1", new Student { Name = "Billy Joe" });
+                //courses.Add(new Course() { CourseId = 1, Name = "Math - 101" });
+            students.Add("2", new Student { Name = "Don Johnson" });
+            students.Add("3", new Student { Name = "Sally Smith" });
 
 
+            foreach (var student in students)
+            {
+                resultLabel.Text += String.Format("Student: {1} - {0}<br/>", student.Value.Name, student.Key);
+                /*foreach (Student student in course.Students)
+                {
+                    result += student.FormatDetailsForDisplay();
+                }
+                */
+            }
         }
+
+        /*
+         * Create a Dictionary of Students (add three example Students
+         * ... make up the details).  Use the StudentId as the 
+         * key.  Each student must be enrolled in two Courses.  Use
+         * Object and Collection Initializers.  Then, iterate through
+         * each student and print out to the web page each Student's
+         * info and the Courses the Student is enrolled in.
+         */
+
+
+
+
+
 
         protected void assignment3Button_Click(object sender, EventArgs e)
         {
@@ -88,9 +108,8 @@ namespace ChallengeStudentCourses
              * new requirement.  Give each Student a grade in each Course they
              * are enrolled in (make up the data).  Then, for each student, 
              * print out each Course they are enrolled in and their grade.
-             */ 
-
-
+             */
         }
+  
     }
 }
