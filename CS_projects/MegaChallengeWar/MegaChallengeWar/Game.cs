@@ -5,11 +5,7 @@ using System.Web;
 
 namespace MegaChallengeWar
 {
-    public class CardNumber
+    public class Game
     {
-        public int cardNumber
-        {
-            value = (2,34
-        }
     }
 }

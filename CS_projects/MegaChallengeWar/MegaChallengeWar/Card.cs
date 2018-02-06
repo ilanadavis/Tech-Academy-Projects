@@ -7,21 +7,9 @@ namespace MegaChallengeWar
 {
     public class Card
     {
-        private int face;
-        private string suit;
+        public string Kind { get; set; }
+        public string Suit { get; set; }
 
 
-        //constructor
-        public Card(int cardFace, string cardSuit)
-        {
-            face = cardFace;
-            suit = cardSuit;
-        }
-
-        //
-        public override string ToString()
-        {
-            return face + " of " + suit;
-        }
     }
 }
