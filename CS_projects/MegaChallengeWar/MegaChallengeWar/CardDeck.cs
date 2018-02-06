@@ -16,7 +16,7 @@ namespace MegaChallengeWar
             deck = new List<Card>();
             random = new Random();
 
-            string[] kinds = new string[]{ "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "Kind", "Ace" };
+            string[] kinds = new string[]{ "2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"};
             string[] suits = new string[]{ "Hearts", "Clubs", "Diamonds", "Spades" };
 
             foreach (var suit in suits)
@@ -35,9 +35,7 @@ namespace MegaChallengeWar
             {
                 dealCard(player1);
                 dealCard(player2);
-                
             }
-            
             return results;
         }
 

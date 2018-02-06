@@ -378,6 +378,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Battle.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="CardDeck.cs" />
     <Compile Include="Contact.aspx.cs">

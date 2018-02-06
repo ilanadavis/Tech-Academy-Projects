@@ -14,5 +14,6 @@ namespace MegaChallengeWar
         {
             Cards = new List<Card>();
         }
+
     }
 }
