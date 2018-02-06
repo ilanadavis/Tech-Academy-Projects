@@ -37,6 +37,7 @@ namespace MegaChallengeWar
                 dealCard(player2);
                 
             }
+            
             return results;
         }
 
