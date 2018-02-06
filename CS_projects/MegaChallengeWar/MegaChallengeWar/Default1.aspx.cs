@@ -9,7 +9,6 @@ namespace MegaChallengeWar
 {
     public partial class Default1 : System.Web.UI.Page
     {
-        public string result = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,7 +17,27 @@ namespace MegaChallengeWar
 
         protected void playButton_Click(object sender, EventArgs e)
         {
-            resultLabel.Text += "WElcome";
+            CardDeck deck = new CardDeck();
+            deck.Shuffle();
+            deck.DealCard();
+            resultLabel.Text = String.Format("{0}",deck.DealCard());
+
+            
+
+
+            /*
+            for (int i = 0; i < 52; i++)
+            {
+                if ((i + 1) % 2 == 0)
+                {
+                    resultLabel.Text += String.Format("Player1 Hand: <br/>{0,-19}<br/>", deck1.DealCard());
+                }
+                else
+                {
+                    resultLabel.Text += String.Format("Player2 Hand: <br/>{0,-19}<br/>", deck1.DealCard());
+                }
+            }
+            */
         }
     }
 }
