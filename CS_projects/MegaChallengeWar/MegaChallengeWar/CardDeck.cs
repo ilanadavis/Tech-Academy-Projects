@@ -7,11 +7,14 @@ namespace MegaChallengeWar
 {
     public class CardDeck
     {
-        public List<Card> _deck;
+        private List<Card> deck;
+        private Random random;
+        string results = "";
 
         public CardDeck()
         {
-            _deck = new List<Card>();
+            deck = new List<Card>();
+            random = new Random();
 
             string[] kinds = new string[]{ "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "Kind", "Ace" };
             string[] suits = new string[]{ "Hearts", "Clubs", "Diamonds", "Spades" };
@@ -20,50 +23,32 @@ namespace MegaChallengeWar
             {
                 foreach (var kind in kinds)
                 {
-                    _deck.Add(new Card() { Suit = suit, Kind = kind });
+                    deck.Add(new Card() { Suit = suit, Kind = kind });
                 }
             }
         }
 
-        
 
-        /*private static Random random = new Random();
-        public List<CardDeck> Deck { get; set; }
-
-        private int currentCard;
-        private const int FullDeck = 52;
-
-        public void newDeck()
+        public string Deal(Player player1, Player player2)
         {
-            string[] faces = { "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace" };
-
-
-            currentCard = 0;
-            random = new Random();
-            Cards = new List<Card>();
-            
-            foreach (var current in faceValue)
+            while (deck.Count > 0)
             {
-                Deck.Add(new Card(current, "Hearts"));
+                dealCard(player1);
+                dealCard(player2);
+                
             }
-            foreach (var current in faceValue)
-            {
-                deck.Add(new Card(current, "Clubs"));
+            return results;
+        }
 
-            }
-            foreach (var current in faceValue)
-            {
-                deck.Add(new Card(current, "Diamonds"));
+        private void dealCard (Player player)
+        {
+            Card card = deck.ElementAt(random.Next(deck.Count));
+            player.Cards.Add(card);
+            deck.Remove(card);
 
-            }
-            foreach (var current in faceValue)
-            {
-                deck.Add(new Card(current, "Spades"));
-
-            }
-            */
-
+            results += "<br/>" + player.Name + " is delt the " + card.Kind + " of " + card.Suit;
+        }
     }
 
-   
+    
 }
