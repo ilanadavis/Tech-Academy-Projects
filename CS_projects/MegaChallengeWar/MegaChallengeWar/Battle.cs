@@ -9,6 +9,7 @@ namespace MegaChallengeWar
     {
         private List<Card> bounty;
         string result = "";
+
         public Battle()
         {
             bounty = new List<Card>();
@@ -37,40 +38,43 @@ namespace MegaChallengeWar
             displayBattleCards(card1, card2);
             if (card1.CardValue() == card2.CardValue())
             {
-                result += "<br/><h3>========== WAR ==========</h3>";
-                war(player1, player2);
+               war(player1, player2);
                 
             }
             if (card1.CardValue() > card2.CardValue())
             {
                 awardWinner(player1);
-                result += "<br/><span style='color:red;font-weight:bolder;'>Player 1 Wins</span>";
             }
             else
             {
                 awardWinner(player2);
-                result += "<br/><span style='color:blue;font-weight:bolder;'>Player 2 Wins</span>";
             }
             return result;
         }
 
         private void awardWinner(Player player)
         {
+            if (bounty.Count == 0)
+            {
+                return;
+            }
             displayBountyCards();
             player.Cards.AddRange(bounty);
             bounty.Clear();
+            result += "<br/><strong>" + player.Name + " wins!</strong>";
 
         }
 
         private void war(Player player1, Player player2)
         {
-            getCard(player1);
+            result += "<br/><h3>========== WAR ==========</h3>";
             getCard(player1);
             Card warCard1 = getCard(player1);
+            getCard(player1);
 
             getCard(player2);
-            getCard(player2);
             Card warCard2 = getCard(player2);
+            getCard(player2);
 
             performEvaluation(player1, player2, warCard1, warCard2);
         }

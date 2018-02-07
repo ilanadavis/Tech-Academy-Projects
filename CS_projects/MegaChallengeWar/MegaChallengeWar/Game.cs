@@ -33,7 +33,6 @@ namespace MegaChallengeWar
                 if (round > 20)
                     break;
             }
-            //determine winner
             result += "<h2>And the winner is...</h2>" + determinewinner();
             return result;
         }
@@ -45,13 +44,17 @@ namespace MegaChallengeWar
             {
                 result += "<br/><span style='color:red;font-weight:bolder;'>Player 1 wins</span>";
             }
-            else
+            else if (player2.Cards.Count > player1.Cards.Count)
             {
                 result += "<br/><span style='color:blue;font-weight:bolder;'>Player 2 wins</span>";
             }
+            else
+            {
+                result += "<br/><span style='color:green;font-weight:bolder;'>It's a tie</span>";
+            }
 
             result += "<br/><span style='color:red;font-weight:bolder;'>Player 1 Total Cards:" + player1.Cards.Count + "</span>" 
-                + "&nbsp;&nbsp; <span style='color:blue;font-weight:bolder;'>Player 2 Total Cards:" + player1.Cards.Count + "</span>";
+                + "&nbsp;&nbsp; <span style='color:blue;font-weight:bolder;'>Player 2 Total Cards:" + player2.Cards.Count + "</span>";
             return result;
         }
     }
