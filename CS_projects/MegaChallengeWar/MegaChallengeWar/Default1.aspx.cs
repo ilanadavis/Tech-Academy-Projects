@@ -17,11 +17,8 @@ namespace MegaChallengeWar
 
         protected void playButton_Click(object sender, EventArgs e)
         {
-
             Game game = new Game("Player 1", "Player 2");
             resultLabel.Text += "<h2>Dealing cards...</h2>" + game.Play();
-            resultLabel.Text += "<h2>Begin Battle...</h2>";
-            resultLabel.Text += "<h2>And the winner is...</h2>" + game.determinewinner();
         }
     }
 }
