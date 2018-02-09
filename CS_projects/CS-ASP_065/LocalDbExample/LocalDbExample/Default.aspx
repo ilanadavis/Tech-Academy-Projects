@@ -13,9 +13,26 @@
     <div>
          <asp:GridView ID="customersGridView" runat="server">
          </asp:GridView>
+
+        <p>&nbsp;</p>
+        
+        Name: <asp:TextBox ID="nameTextBox" runat="server"></asp:TextBox>
          <br />
+        Address: <asp:TextBox ID="addressTextBox" runat="server"></asp:TextBox>
          <br />
+        City: <asp:TextBox ID="cityTextBox" runat="server"></asp:TextBox>
          <br />
+        State: <asp:TextBox ID="stateTextBox" runat="server"></asp:TextBox>
+         <br />
+        Zip: <asp:TextBox ID="zipTextBox" runat="server"></asp:TextBox>
+         <br />
+        Notes: <asp:TextBox ID="notesTextBox" runat="server"></asp:TextBox>
+         <br />
+        
+        <p>&nbsp;</p>
+        
+        <asp:Button runat="server" text="Save Data" ID="okButton" OnClick="okButton_Click" />
+        <p>&nbsp;</p>
          <asp:Label ID="resultLabel" runat="server"></asp:Label>
     </div>
     </form>

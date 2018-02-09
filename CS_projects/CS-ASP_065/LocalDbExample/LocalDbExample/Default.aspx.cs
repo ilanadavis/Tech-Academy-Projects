@@ -24,12 +24,43 @@ namespace LocalDbExample
             }
             */
 
+            displayCustomers();
+
+            //resultLabel.Text = result;
+        }
+
+        protected void okButton_Click(object sender, EventArgs e)
+        {
+            var newCustomer = new DTO.Customer();
+
+            newCustomer.CustomerId = Guid.NewGuid();
+            newCustomer.Name = nameTextBox.Text;
+            newCustomer.Address = addressTextBox.Text;
+            newCustomer.City = cityTextBox.Text;
+            newCustomer.State = stateTextBox.Text;
+            newCustomer.PostalCode = zipTextBox.Text;
+            newCustomer.Notes = notesTextBox.Text;
+
+            try
+            {
+                Domain.CustomerManager.AddCustomer(newCustomer);
+            }
+            catch (Exception ex)
+            {
+
+                resultLabel.Text = ex.Message;
+            }
+
+            displayCustomers();
+
+        }
+
+        private void displayCustomers()
+        {
             var customers = Domain.CustomerManager.GetCustomers();
 
             customersGridView.DataSource = customers.ToList();
             customersGridView.DataBind();
-
-            //resultLabel.Text = result;
         }
     }
 }

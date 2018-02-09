@@ -14,5 +14,19 @@ namespace LocalDbExample.Domain
             var customers = Persistence.CustomersRespository.GetCustomers();
             return customers;
         }
+
+        public static void AddCustomer(DTO.Customer customer)
+        {
+            try
+            {
+                Persistence.CustomersRespository.AddCustomer(customer);
+
+            }
+            catch (Exception)
+            {
+                //Log it
+                throw;
+            }
+        }
     }
 }
