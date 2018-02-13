@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PapaBobsMegaChallenge {
+namespace PapaBobs {
     
     
     public partial class Default {

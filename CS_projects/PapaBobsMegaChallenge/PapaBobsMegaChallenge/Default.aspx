@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PapaBobsMegaChallenge.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PapaBobs.Default" %>
 
 <!DOCTYPE html>
 
@@ -63,9 +63,9 @@
         <div class="radio"><label><asp:RadioButton ID="cashRadioButton" runat="server" Checked="True" GroupName="payment"></asp:RadioButton> Cash</label></div>
         <div class="radio"><label><asp:RadioButton ID="creditRadioButton" runat="server" GroupName="payment"></asp:RadioButton> Credit</label></div>
 
-        <asp:Button ID="orderButton" runat="server" Text="Order" CssClass="btn btn-primary" />
+        <asp:Button ID="orderButton" runat="server" Text="Order" CssClass="btn btn-primary" OnClick="orderButton_Click" />
 
-        <h3>Total Cost:<asp:Label ID="resultLabel" runat="server"></asp:Label></h3>
+        <h3>Total Cost: <asp:Label ID="resultLabel" runat="server"></asp:Label></h3>
 
     
     </div>
