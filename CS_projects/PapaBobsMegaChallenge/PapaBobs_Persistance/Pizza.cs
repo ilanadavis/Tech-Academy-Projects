@@ -30,8 +30,6 @@ namespace PapaBobs.Persistance
             {
                 sizeSubTotal = 16;
             }
-            //resultCost += sizeSubTotal;
-
             return sizeSubTotal;
         }
 
@@ -50,7 +48,6 @@ namespace PapaBobs.Persistance
             {
                 crustSubTotal = 2;
             }
-            //resultCost += crustSubTotal;
             return crustSubTotal;
         }
         
