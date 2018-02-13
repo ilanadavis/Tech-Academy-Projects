@@ -44,19 +44,19 @@
         <h3>Deliver To:</h3>
         <div class="form-group">
             <label>Name:</label>
-            <asp:TextBox ID="nameTextBox" runat="server" CssClass="form-control" CausesValidation="True" ValidationGroup="textbox"></asp:TextBox>
+            <asp:TextBox ID="nameTextBox" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="form-group">
             <label>Address:</label>
-            <asp:TextBox ID="addressTextBox" runat="server" CssClass="form-control" CausesValidation="True" ValidationGroup="textbox"></asp:TextBox>
+            <asp:TextBox ID="addressTextBox" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="form-group">
             <label>Zip:</label>
-            <asp:TextBox ID="zipTextBox" runat="server" CssClass="form-control" CausesValidation="True" ValidationGroup="textbox"></asp:TextBox>
+            <asp:TextBox ID="zipTextBox" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="form-group">
             <label>Phone:</label>
-            <asp:TextBox ID="phoneTextBox" runat="server" CssClass="form-control" CausesValidation="True" ValidationGroup="textbox"></asp:TextBox>
+            <asp:TextBox ID="phoneTextBox" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
 
         <h3>Payment:</h3>

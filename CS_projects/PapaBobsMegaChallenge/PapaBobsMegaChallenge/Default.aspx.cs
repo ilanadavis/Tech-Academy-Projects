@@ -22,6 +22,27 @@ namespace PapaBobs
             pizza.PizzaSize = sizeDropDownList.SelectedValue;
             pizza.Crust = crustDropDownList.SelectedValue;
 
+
+            if (sausageCheckBox.Checked)
+            {
+                pizza.Toppings.Add(new Topping() { Name = "Sausage" });
+            }
+            if (pepperoniCheckBox.Checked)
+            {
+                pizza.Toppings.Add(new Topping() { Name = "Pepperoni" });
+            }
+            if (onionsCheckBox.Checked)
+            {
+                pizza.Toppings.Add(new Topping() { Name = "Onions" });
+            }
+            if (greenpeppersCheckBox.Checked)
+            {
+                pizza.Toppings.Add(new Topping() { Name = "Green Peppers" });
+            }
+
+
+            
+
             resultLabel.Text = String.Format("{0:C}",pizza.totalCost());
         }
     }

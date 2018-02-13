@@ -10,51 +10,78 @@ namespace PapaBobs.Persistance
     {
         public string PizzaSize { get; set; }
         public string Crust { get; set; }
-        public string Toppings { get; set; } //list
+        public List<Topping> Toppings = new List<Topping>() { };
+
 
         string resultCost = "";
-        
 
-        public int sizeSubTotal;
-        public int pizzaSizeCost()
+        public double pizzaSizeCost()
         {
             if (PizzaSize == "Small")
             {
-                sizeSubTotal = 12;
+                return 12;
             }
             if (PizzaSize == "Medium")
             {
-                sizeSubTotal = 14;
+                return 14;
             }
             if (PizzaSize == "Large")
             {
-                sizeSubTotal = 16;
+                return 16;
             }
-            return sizeSubTotal;
+            return 0; //Add exception
+           
         }
 
-        public int crustSubTotal;
-        public int pizzaCrustCost()
+        public double pizzaCrustCost()
         {
             if (Crust == "Regular")
             {
-                crustSubTotal = 0;
+                return 0;
             }
             if (Crust == "Thin")
             {
-                crustSubTotal = 0;
+                return 0;
             }
             if (Crust == "Thick")
             {
-                crustSubTotal = 2;
+                return 2;
             }
-            return crustSubTotal;
+            return 0; //Add exception
+        }
+
+        public double toppingsCost()
+        {
+            double costofTopping = 0;
+            foreach (var topping in Toppings)   
+            {
+                if (topping.Name == "Sausage")
+                {
+                    costofTopping += 2;
+                }
+                if (topping.Name == "Pepperoni")
+                {
+                    costofTopping += 1.5;
+                }
+                if (topping.Name == "Onions")
+                {
+                    costofTopping += 1;
+                }
+                if (topping.Name == "Green Peppers")
+                {
+                    costofTopping += 1;
+                }
+                else
+                {
+                    costofTopping += 0;
+                }
+            }
+            return costofTopping;
         }
         
-        public int costTotals;
-        public int totalCost()
+        public double totalCost()
         {
-            costTotals = pizzaSizeCost() + pizzaCrustCost();
+            double costTotals = pizzaSizeCost() + pizzaCrustCost() + toppingsCost();
             resultCost += costTotals;
             return costTotals;
         }
