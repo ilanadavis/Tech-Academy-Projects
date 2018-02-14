@@ -13,10 +13,10 @@ namespace PapaBobsMegaChallenge
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PapaBobsDbEntities1 : DbContext
+    public partial class PapaBobsDbEntitiesConnection : DbContext
     {
-        public PapaBobsDbEntities1()
-            : base("name=PapaBobsDbEntities1")
+        public PapaBobsDbEntitiesConnection()
+            : base("name=PapaBobsDbEntitiesConnection")
         {
         }
     
@@ -25,6 +25,6 @@ namespace PapaBobsMegaChallenge
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Table> Tables { get; set; }
+        public virtual DbSet<OrderManager> OrderManagers { get; set; }
     }
 }
