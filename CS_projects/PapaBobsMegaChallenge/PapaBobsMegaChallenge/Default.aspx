@@ -44,19 +44,26 @@
         <h3>Deliver To:</h3>
         <div class="form-group">
             <label>Name:</label>
-            <asp:TextBox ID="nameTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="nameTextBox" runat="server" CssClass="form-control" CausesValidation="True" ValidationGroup="textboxvalidation"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="NameRequiredFieldValidator" runat="server" ControlToValidate="nameTextBox" ErrorMessage="Please enter a name." ForeColor="Red"></asp:RequiredFieldValidator>
         </div>
         <div class="form-group">
             <label>Address:</label>
-            <asp:TextBox ID="addressTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="addressTextBox" runat="server" CssClass="form-control" CausesValidation="True" ValidationGroup="textboxvalidation"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="AddressRequiredFieldValidator" runat="server" ControlToValidate="addressTextBox" ErrorMessage="Please enter an address." ForeColor="Red"></asp:RequiredFieldValidator>
+
         </div>
         <div class="form-group">
             <label>Zip:</label>
-            <asp:TextBox ID="zipTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="zipTextBox" runat="server" CssClass="form-control" CausesValidation="True" ValidationGroup="textboxvalidation"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="ZipRequiredFieldValidator" runat="server" ControlToValidate="zipTextBox" ErrorMessage="Please enter a zip code." ForeColor="Red"></asp:RequiredFieldValidator>
+
         </div>
         <div class="form-group">
             <label>Phone:</label>
-            <asp:TextBox ID="phoneTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="phoneTextBox" runat="server" CssClass="form-control" CausesValidation="True" ValidationGroup="textboxvalidation"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="PhoneRequiredFieldValidator" runat="server" ControlToValidate="phoneTextBox" ErrorMessage="Please enter a phone number." ForeColor="Red"></asp:RequiredFieldValidator>
+
         </div>
 
         <h3>Payment:</h3>

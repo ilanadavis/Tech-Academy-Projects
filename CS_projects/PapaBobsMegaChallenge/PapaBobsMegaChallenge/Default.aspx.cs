@@ -40,11 +40,30 @@ namespace PapaBobs
                 pizza.Toppings.Add(new Topping() { Name = "Green Peppers" });
             }
 
+            string msg = "";
+
+            foreach (IValidator aValidator in this.Validators)
+            {
+                if (!aValidator.IsValid)
+                {
+                    msg += "<br />" + aValidator.ErrorMessage;
+                }
+            }
+            resultLabel.Text = msg;
+            /*
+            if (nameTextBox == null || addressTextBox == null || zipTextBox == null || phoneTextBox == null)
+            {
+                throw new Exception(string.Format("This is a required field!"));
+
+            }
+            */
 
             
 
+
             resultLabel.Text = String.Format("{0:C}",pizza.totalCost());
         }
+
     }
 }
 

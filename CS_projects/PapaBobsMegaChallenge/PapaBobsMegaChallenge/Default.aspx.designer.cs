@@ -85,6 +85,15 @@ namespace PapaBobs {
         protected global::System.Web.UI.WebControls.TextBox nameTextBox;
         
         /// <summary>
+        /// NameRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator NameRequiredFieldValidator;
+        
+        /// <summary>
         /// addressTextBox control.
         /// </summary>
         /// <remarks>
@@ -92,6 +101,15 @@ namespace PapaBobs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox addressTextBox;
+        
+        /// <summary>
+        /// AddressRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator AddressRequiredFieldValidator;
         
         /// <summary>
         /// zipTextBox control.
@@ -103,6 +121,15 @@ namespace PapaBobs {
         protected global::System.Web.UI.WebControls.TextBox zipTextBox;
         
         /// <summary>
+        /// ZipRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ZipRequiredFieldValidator;
+        
+        /// <summary>
         /// phoneTextBox control.
         /// </summary>
         /// <remarks>
@@ -110,6 +137,15 @@ namespace PapaBobs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox phoneTextBox;
+        
+        /// <summary>
+        /// PhoneRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator PhoneRequiredFieldValidator;
         
         /// <summary>
         /// cashRadioButton control.
