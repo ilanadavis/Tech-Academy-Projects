@@ -7,8 +7,8 @@
     <ProjectGuid>{95466CC6-2EEF-49F0-B796-90A18D423096}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PapaBobs_Persistance</RootNamespace>
-    <AssemblyName>PapaBobs_Persistance</AssemblyName>
+    <RootNamespace>PapaBobs.Persistance</RootNamespace>
+    <AssemblyName>PapaBobs.Persistance</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

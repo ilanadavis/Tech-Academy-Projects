@@ -7,8 +7,8 @@
     <ProjectGuid>{1FBF0300-F421-43FD-AD6E-74B86F467B38}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PapaBobs_Domain</RootNamespace>
-    <AssemblyName>PapaBobs_Domain</AssemblyName>
+    <RootNamespace>PapaBobs.Domain</RootNamespace>
+    <AssemblyName>PapaBobs.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

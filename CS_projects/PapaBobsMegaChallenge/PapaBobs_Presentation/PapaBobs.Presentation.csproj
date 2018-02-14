@@ -7,8 +7,8 @@
     <ProjectGuid>{82678179-05D7-4E61-8EBD-F17D32175BED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PapaBobs_Presentation</RootNamespace>
-    <AssemblyName>PapaBobs_Presentation</AssemblyName>
+    <RootNamespace>PapaBobs.Presentation</RootNamespace>
+    <AssemblyName>PapaBobs.Presentation</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
