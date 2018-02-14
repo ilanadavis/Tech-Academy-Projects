@@ -55,7 +55,6 @@ namespace PapaBobs
                     msg += "<br />" + aValidator.ErrorMessage;
                 }
             }
-            //resultLabel.Text = msg;
         }
 
     }
