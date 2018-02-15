@@ -7,9 +7,9 @@ namespace PapaBobs.Domain
 {
     public class OrderManager
     {
-        public static void CreateOrder()
+        public static void CreateOrder(DTO.OrderDTO orderDTO)
         {
-
+            /*
             var order = new DTO.OrderDTO();
 
             order.OrderId = Guid.NewGuid();
@@ -23,8 +23,8 @@ namespace PapaBobs.Domain
             order.Phone = "5555555";
             order.PaymentType = DTO.Enums.PaymentType.Credit;
             order.TotalCost = 16.50M;
-
-            Persistance.OrderRepository.CreateOrder(order);
+            */
+            Persistance.OrderRepository.CreateOrder(orderDTO);
             
         }
     }
