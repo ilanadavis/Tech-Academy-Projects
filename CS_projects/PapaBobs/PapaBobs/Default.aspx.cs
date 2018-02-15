@@ -13,5 +13,11 @@ namespace PapaBobs
         {
 
         }
+
+        protected void orderButton_Click(object sender, EventArgs e)
+        {
+            Domain.OrderManager.CreateOrder();
+
+        }
     }
 }

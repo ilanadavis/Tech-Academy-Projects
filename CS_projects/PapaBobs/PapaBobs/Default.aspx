@@ -9,7 +9,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+            <asp:Button ID="orderButton" runat="server" Text="Order" CssClass="btn btn-primary" OnClick="orderButton_Click" />
+
     </div>
     </form>
 </body>
