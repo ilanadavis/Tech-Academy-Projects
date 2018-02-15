@@ -17,6 +17,8 @@ namespace PapaBobs
 
         protected void orderButton_Click(object sender, EventArgs e)
         {
+            Domain.OrderManager.CreateOrder();
+            
             Pizza pizza = new Pizza();
 
             pizza.PizzaSize = sizeDropDownList.SelectedValue;
@@ -42,8 +44,9 @@ namespace PapaBobs
 
             TextValidator();
             resultLabel.Text = String.Format("{0:C}",pizza.totalCost());
+            
         }
-
+        
         public void TextValidator()
         {
             string msg = "";
@@ -56,6 +59,7 @@ namespace PapaBobs
                 }
             }
         }
+        
 
     }
 }
