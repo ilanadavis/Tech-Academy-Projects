@@ -40,18 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pizza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Topping.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PapaBobs.DTO\PapaBobs.DTO.csproj">
       <Project>{73fd2385-62a8-412c-a048-62f988cd5c34}</Project>
       <Name>PapaBobs.DTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PapaBobs_Domain\PapaBobs.Domain.csproj">
-      <Project>{1fbf0300-f421-43fd-ad6e-74b86f467b38}</Project>
-      <Name>PapaBobs.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

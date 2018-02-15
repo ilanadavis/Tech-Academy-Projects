@@ -42,16 +42,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PapaBobs.DTO\PapaBobs.DTO.csproj">
-      <Project>{73fd2385-62a8-412c-a048-62f988cd5c34}</Project>
-      <Name>PapaBobs.DTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PapaBobs_Domain\PapaBobs.Domain.csproj">
-      <Project>{1fbf0300-f421-43fd-ad6e-74b86f467b38}</Project>
-      <Name>PapaBobs.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

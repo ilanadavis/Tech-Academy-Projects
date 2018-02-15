@@ -532,19 +532,22 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PapaBobs.DTO\PapaBobs.DTO.csproj">
+      <Project>{73fd2385-62a8-412c-a048-62f988cd5c34}</Project>
+      <Name>PapaBobs.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PapaBobs_Domain\PapaBobs.Domain.csproj">
+      <Project>{1fbf0300-f421-43fd-ad6e-74b86f467b38}</Project>
+      <Name>PapaBobs.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PapaBobs_Persistance\PapaBobs.Persistance.csproj">
-      <Project>{95466cc6-2eef-49f0-b796-90a18d423096}</Project>
-      <Name>PapaBobs.Persistance</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
