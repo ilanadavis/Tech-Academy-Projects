@@ -5,64 +5,64 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="PapaBobsDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="OrderManager">
+        <EntityType Name="Orders">
           <Key>
             <PropertyRef Name="Order ID" />
           </Key>
           <Property Name="Order ID" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Size" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Crust" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Size" Type="int" Nullable="false" />
+          <Property Name="Crust" Type="int" Nullable="false" />
           <Property Name="Sausage" Type="bit" Nullable="false" />
           <Property Name="Pepperoni" Type="bit" Nullable="false" />
           <Property Name="Onions" Type="bit" Nullable="false" />
           <Property Name="Green Peppers" Type="bit" Nullable="false" />
-          <Property Name="Total Cost" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Zip" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="PaymentType" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Completed" Type="bit" />
+          <Property Name="Total Cost" Type="money" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PaymentType" Type="int" Nullable="false" />
+          <Property Name="Completed" Type="bit" Nullable="false" />
         </EntityType>
         <EntityContainer Name="PapaBobsDbModelStoreContainer">
-          <EntitySet Name="OrderManager" EntityType="Self.OrderManager" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PapaBobsDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="OrderManager">
+        <EntityType Name="Order">
           <Key>
             <PropertyRef Name="Order_ID" />
           </Key>
           <Property Name="Order_ID" Type="Guid" Nullable="false" />
-          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Crust" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+          <Property Name="Crust" Type="Int32" Nullable="false" />
           <Property Name="Sausage" Type="Boolean" Nullable="false" />
           <Property Name="Pepperoni" Type="Boolean" Nullable="false" />
           <Property Name="Onions" Type="Boolean" Nullable="false" />
           <Property Name="Green_Peppers" Type="Boolean" Nullable="false" />
-          <Property Name="Total_Cost" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Completed" Type="Boolean" />
+          <Property Name="Total_Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PaymentType" Type="Int32" Nullable="false" />
+          <Property Name="Completed" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="PapaBobsDbEntitiesConnection" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="OrderManagers" EntityType="Self.OrderManager" />
+        <EntityContainer Name="PapaBobsDbEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Orders" EntityType="Self.Order" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PapaBobsDbModelStoreContainer" CdmEntityContainer="PapaBobsDbEntitiesConnection">
-          <EntitySetMapping Name="OrderManagers">
-            <EntityTypeMapping TypeName="PapaBobsDbModel.OrderManager">
-              <MappingFragment StoreEntitySet="OrderManager">
+        <EntityContainerMapping StorageEntityContainer="PapaBobsDbModelStoreContainer" CdmEntityContainer="PapaBobsDbEntities2">
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="PapaBobsDbModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
                 <ScalarProperty Name="Order_ID" ColumnName="Order ID" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="Crust" ColumnName="Crust" />

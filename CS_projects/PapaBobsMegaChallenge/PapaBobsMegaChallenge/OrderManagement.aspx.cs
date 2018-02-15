@@ -23,20 +23,24 @@ namespace PapaBobsMegaChallenge
             resultLabel.Text = result;
             */
         }
-        
+        /*
         protected void ordermanagementGridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             
+            
+            
+        }
+        */
+        protected void ordersGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
             int index = Convert.ToInt32(e.CommandArgument);
-            GridViewRow row = ordermanagementGridView.Rows[index];
+            GridViewRow row = ordersGridView.Rows[index];
 
 
             var value = row.Cells[1].Text;
             var Order_ID = Guid.Parse(value);
 
             resultLabel.Text = string.Format("{0}", Order_ID);
-            
         }
-
     }
     }

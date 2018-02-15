@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
         
-        <asp:GridView ID="ordermanagementGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="Order ID" DataSourceID="SqlDataSource1" OnRowCommand="ordermanagementGridView_RowCommand">
+        <asp:GridView ID="ordersGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="Order ID" DataSourceID="SqlDataSource1" OnRowCommand="ordersGridView_RowCommand">
             <Columns>
                 <asp:ButtonField Text="Complete" />
                 <asp:BoundField DataField="Order ID" HeaderText="Order ID" ReadOnly="True" SortExpression="Order ID" />
@@ -29,7 +29,7 @@
                 <asp:CheckBoxField DataField="Completed" HeaderText="Completed" SortExpression="Completed" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [OrderManager]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnectionString %>" SelectCommand="SELECT * FROM [Orders]"></asp:SqlDataSource>
         
         <br />
         <asp:Label ID="resultLabel" runat="server"></asp:Label>
