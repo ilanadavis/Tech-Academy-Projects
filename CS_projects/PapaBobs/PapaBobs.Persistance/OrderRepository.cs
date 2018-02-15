@@ -14,7 +14,7 @@ namespace PapaBobs.Persistance
             var order = new Order();
 
             order.OrderId = Guid.NewGuid();
-            order.Size = 1;
+            order.Size = DTO.Enums.Size.Large;
             order.Crust = 0;
             order.Pepperoni = true;
             order.GreenPeppers = true;
