@@ -122,6 +122,7 @@
     <Compile Include="Enums\CrustType.cs" />
     <Compile Include="Enums\PaymentType.cs" />
     <Compile Include="Enums\Size.cs" />
+    <Compile Include="OrderDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
