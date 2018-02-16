@@ -9,26 +9,22 @@ namespace PapaBobs.Domain
     {
         public static void CreateOrder(DTO.OrderDTO orderDTO)
         {
-            /*
-            var order = new DTO.OrderDTO();
-
-            order.OrderId = Guid.NewGuid();
-            order.Size = DTO.Enums.Size.Large;
-            order.Crust = DTO.Enums.CrustType.Thick;
-            order.Pepperoni = true;
-            order.GreenPeppers = true;
-            order.Name = "Testing";
-            order.Address = "123 AddressTest";
-            order.Zip = "12345";
-            order.Phone = "5555555";
-            order.PaymentType = DTO.Enums.PaymentType.Credit;
-            order.TotalCost = 16.50M;
-            */
+            //Validation is in the default.aspx css code
 
             orderDTO.OrderId = Guid.NewGuid();
             orderDTO.TotalCost = PizzaPriceManager.CalculateCost(orderDTO);
             Persistance.OrderRepository.CreateOrder(orderDTO);
             
+        }
+
+        public static object GetOrders()
+        {
+            return Persistance.OrderRepository.GetOrders();
+        }
+
+        public static void CompleteOrder(Guid orderId)
+        {
+            Persistance.OrderRepository.CompleteOrder(orderId);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 
 namespace PapaBobs.Persistance
 {
@@ -36,8 +37,51 @@ namespace PapaBobs.Persistance
             order.PaymentType = orderDTO.PaymentType;
             order.Completed = orderDTO.Completed;
 
-
             return order;
+        }
+
+        public static void CompleteOrder(Guid orderId)
+        {
+            var db = new PapaBobsDbEntities();
+            var order = db.Orders.First(p => p.OrderId == orderId);
+            order.Completed = true;
+            db.SaveChanges();
+        }
+
+        public static List<DTO.OrderDTO> GetOrders()
+        {
+            var db = new PapaBobsDbEntities();
+            var orders = db.Orders.Where(p=> p.Completed == false).ToList();
+
+            var ordersDTO = convertToDTO(orders);
+            return ordersDTO;
+
+        }
+
+        private static List<DTO.OrderDTO> convertToDTO(List<Order> orders)
+        {
+            var ordersDTO = new List<DTO.OrderDTO>();
+            foreach (var order in orders)
+            {
+                var orderDTO = new DTO.OrderDTO();
+                orderDTO.OrderId = order.OrderId;
+                orderDTO.Crust = order.Crust;
+                orderDTO.Size = order.Size;
+                orderDTO.Name = order.Name;
+                orderDTO.Address = order.Address;
+                orderDTO.Zip = order.Zip;
+                orderDTO.Phone = order.Phone;
+                orderDTO.Sausage = order.Sausage;
+                orderDTO.Pepperoni = order.Pepperoni;
+                orderDTO.Onions = order.Onions;
+                orderDTO.GreenPeppers = order.GreenPeppers;
+                orderDTO.TotalCost = order.TotalCost;
+                orderDTO.PaymentType = order.PaymentType;
+                orderDTO.Completed = order.Completed;
+                ordersDTO.Add(orderDTO);
+
+            }
+            return ordersDTO;
         }
     }
 }
