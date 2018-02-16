@@ -26,7 +26,6 @@ namespace PapaBobs.Domain
             cost += (order.Onions) ? prices.OnionsCost : 0M;
             cost += (order.GreenPeppers) ? prices.GreenPeppersCost : 0M;
             return cost;
-
         }
 
         private static decimal calculateCrustCost(OrderDTO order, DTO.PizzaPriceDTO prices)

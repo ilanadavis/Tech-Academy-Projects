@@ -16,11 +16,11 @@ namespace PapaBobs
 
         protected void orderButton_Click(object sender, EventArgs e)
         {
-
-
             var order = buildOrder();
 
             Domain.OrderManager.CreateOrder(order);
+
+            Response.Redirect("success.aspx");
         }
 
         private DTO.Enums.Size determineSize()
@@ -65,9 +65,7 @@ namespace PapaBobs
 
             var order = buildOrder();
 
-            resultLabel.Text = Domain.PizzaPriceManager.CalculateCost(order).ToString("C");
-
-            
+            resultLabel.Text = Domain.PizzaPriceManager.CalculateCost(order).ToString("C");          
         }
 
         private DTO.OrderDTO buildOrder()
@@ -89,6 +87,5 @@ namespace PapaBobs
 
             return order;
         }
-
     }
 }
