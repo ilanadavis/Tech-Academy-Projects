@@ -18,20 +18,61 @@ namespace PapaBobs
         {
             var order = new DTO.OrderDTO();
 
-            order.OrderId = Guid.NewGuid();
-            order.Size = DTO.Enums.Size.Large;
-            order.Crust = DTO.Enums.CrustType.Thick;
-            order.Pepperoni = true;
-            order.GreenPeppers = true;
-            order.Name = "Testing";
-            order.Address = "123 AddressTest";
-            order.Zip = "12345";
-            order.Phone = "5555555";
-            order.PaymentType = DTO.Enums.PaymentType.Credit;
-            order.TotalCost = 16.50M;
+            order.Size = determineSize();
+            order.Crust = determineCrust();
+            order.Sausage = sausageCheckBox.Checked;
+            order.Pepperoni = pepperoniCheckBox.Checked;
+            order.Onions = onionsCheckBox.Checked;
+            order.GreenPeppers = greenpeppersCheckBox.Checked;
+            order.Name = nameTextBox.Text;
+            order.Address = addressTextBox.Text;
+            order.Zip = zipTextBox.Text;
+            order.Phone = phoneTextBox.Text;
+
+            order.PaymentType = determinePaymentType();
 
             Domain.OrderManager.CreateOrder(order);
-
         }
+
+        private DTO.Enums.Size determineSize()
+        {
+            DTO.Enums.Size size;
+            if (!Enum.TryParse(sizeDropDownList.SelectedValue, out size))
+            {
+                throw new Exception("Please select a size");
+            }
+            return size;
+        }
+
+        private DTO.Enums.CrustType determineCrust()
+        {
+            DTO.Enums.CrustType crust;
+            if (!Enum.TryParse(crustDropDownList.SelectedValue, out crust))
+            {
+                throw new Exception("Please select a crust type");
+            }
+            return crust;
+        }
+
+        private DTO.Enums.PaymentType determinePaymentType()
+        {
+            DTO.Enums.PaymentType paymenttype;
+            if (cashRadioButton.Checked)
+            {
+                paymenttype = DTO.Enums.PaymentType.Cash;
+            }
+            else if (creditRadioButton.Checked)
+            {
+                paymenttype = DTO.Enums.PaymentType.Credit;
+            }
+            else
+            {
+                throw new Exception("Payment type not selected");
+            }
+            return paymenttype;
+        }
+
+        
+
     }
 }

@@ -7,16 +7,19 @@ namespace PapaBobs.Domain
 {
     public class Pizza
     {
-        public string PizzaSize { get; set; }
-        public string Crust { get; set; }
+        /*
+        public enum PizzaSize { get; set; }
+        public enum Crust { get; set; }
         public List<Topping> Toppings = new List<Topping>() { };
 
-
+        
         string resultCost = "";
 
         public double pizzaSizeCost()
         {
-            if (PizzaSize == "Small")
+            
+            
+            if (PizzaSize = "Small")
             {
                 return 12;
             }
@@ -28,6 +31,7 @@ namespace PapaBobs.Domain
             {
                 return 16;
             }
+            
             return 0; //Add exception
 
         }
@@ -87,6 +91,6 @@ namespace PapaBobs.Domain
 
 
         // method to determine cost based on the property selected
-
+        */
     }
 }
