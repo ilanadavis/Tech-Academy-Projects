@@ -1,0 +1,37 @@
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\FirstChallenge.dll.config
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\FirstChallenge.dll
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\FirstChallenge.pdb
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\System.Web.Helpers.dll
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\System.Web.Mvc.dll
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\System.Web.Razor.dll
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\System.Web.Webpages.Deployment.dll
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\System.Web.Webpages.dll
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\System.Web.Webpages.Razor.dll
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\System.Web.Razor.xml
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\System.Web.Webpages.xml
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\System.Web.Webpages.Deployment.xml
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\System.Web.Webpages.Razor.xml
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\System.Web.Helpers.xml
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\bin\System.Web.Mvc.xml
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\obj\Debug\FirstChallenge.csprojResolveAssemblyReference.cache
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\obj\Debug\FirstChallenge.dll
+c:\users\bob_000\documents\visual studio 2013\Projects\FirstChallenge\FirstChallenge\obj\Debug\FirstChallenge.pdb
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\FirstChallenge.dll.config
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\FirstChallenge.dll
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\FirstChallenge.pdb
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\Microsoft.Web.Infrastructure.dll
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\System.Web.Helpers.dll
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\System.Web.Mvc.dll
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\System.Web.Razor.dll
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\System.Web.Webpages.Deployment.dll
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\System.Web.Webpages.dll
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\System.Web.Webpages.Razor.dll
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\System.Web.Razor.xml
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\System.Web.Webpages.xml
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\System.Web.Webpages.Deployment.xml
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\System.Web.Webpages.Razor.xml
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\System.Web.Helpers.xml
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\System.Web.Mvc.xml
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\obj\Debug\FirstChallenge.csprojResolveAssemblyReference.cache
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\obj\Debug\FirstChallenge.dll
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\obj\Debug\FirstChallenge.pdb

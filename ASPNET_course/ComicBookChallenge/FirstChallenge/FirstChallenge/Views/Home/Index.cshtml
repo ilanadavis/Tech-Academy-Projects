@@ -1,0 +1,15 @@
+﻿@model List<FirstChallenge.Models.ComicBook>
+@{
+    ViewBag.Title = "Index";
+}
+<h1>My Comics</h1>
+@foreach (var comic in FirstChallenge.Models.ComicBookManager.GetComicBooks())
+{
+    <h2>@comic.ComicTitle</h2>
+    <h3>@(comic.EpisodeNumber + " - " + @comic.EpisodeTitle)</h3>
+
+    <strong> Starring: </strong> @comic.Characters
+
+
+}
+
