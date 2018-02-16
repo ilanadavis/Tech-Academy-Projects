@@ -16,20 +16,9 @@ namespace PapaBobs
 
         protected void orderButton_Click(object sender, EventArgs e)
         {
-            var order = new DTO.OrderDTO();
 
-            order.Size = determineSize();
-            order.Crust = determineCrust();
-            order.Sausage = sausageCheckBox.Checked;
-            order.Pepperoni = pepperoniCheckBox.Checked;
-            order.Onions = onionsCheckBox.Checked;
-            order.GreenPeppers = greenpeppersCheckBox.Checked;
-            order.Name = nameTextBox.Text;
-            order.Address = addressTextBox.Text;
-            order.Zip = zipTextBox.Text;
-            order.Phone = phoneTextBox.Text;
 
-            order.PaymentType = determinePaymentType();
+            var order = buildOrder();
 
             Domain.OrderManager.CreateOrder(order);
         }
@@ -61,18 +50,45 @@ namespace PapaBobs
             {
                 paymenttype = DTO.Enums.PaymentType.Cash;
             }
-            else if (creditRadioButton.Checked)
+            else 
             {
                 paymenttype = DTO.Enums.PaymentType.Credit;
             }
-            else
-            {
-                throw new Exception("Payment type not selected");
-            }
+
             return paymenttype;
         }
 
-        
+        protected void recalculateTotalCost(object sender, EventArgs e)
+        {
+            if (sizeDropDownList.SelectedValue == String.Empty) return;
+            if (crustDropDownList.SelectedValue == String.Empty) return;
+
+            var order = buildOrder();
+
+            resultLabel.Text = Domain.PizzaPriceManager.CalculateCost(order).ToString("C");
+
+            
+        }
+
+        private DTO.OrderDTO buildOrder()
+        {
+            var order = new DTO.OrderDTO();
+
+            order.Size = determineSize();
+            order.Crust = determineCrust();
+            order.Sausage = sausageCheckBox.Checked;
+            order.Pepperoni = pepperoniCheckBox.Checked;
+            order.Onions = onionsCheckBox.Checked;
+            order.GreenPeppers = greenpeppersCheckBox.Checked;
+            order.Name = nameTextBox.Text;
+            order.Address = addressTextBox.Text;
+            order.Zip = zipTextBox.Text;
+            order.Phone = phoneTextBox.Text;
+
+            order.PaymentType = determinePaymentType();
+
+            return order;
+        }
 
     }
 }

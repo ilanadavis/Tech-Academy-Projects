@@ -31,6 +31,15 @@ namespace PapaBobs {
         protected global::System.Web.UI.WebControls.DropDownList sizeDropDownList;
         
         /// <summary>
+        /// SizeRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator SizeRequiredFieldValidator;
+        
+        /// <summary>
         /// crustDropDownList control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace PapaBobs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList crustDropDownList;
+        
+        /// <summary>
+        /// CrustRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator CrustRequiredFieldValidator;
         
         /// <summary>
         /// sausageCheckBox control.

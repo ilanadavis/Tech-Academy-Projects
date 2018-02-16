@@ -21,27 +21,30 @@
         </div>
         <div class="form-group">
             <label>Size:</label>
-            <asp:DropDownList ID="sizeDropDownList" runat="server" CssClass="form-control" AutoPostBack="true">
-                <asp:ListItem Text="Choose One..." Selected="True" />
+            <asp:DropDownList ID="sizeDropDownList" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="recalculateTotalCost">
+                <asp:ListItem Text="Choose One..." Value="" Selected="True" />
                 <asp:ListItem Text="Small (12 inch - $12)" Value="Small" />
                 <asp:ListItem Text="Medium (14 inch - $14)" Value="Medium" />
                 <asp:ListItem Text="Large (16 inch - $16)" Value="Large" />
             </asp:DropDownList>
+            <asp:RequiredFieldValidator ID="SizeRequiredFieldValidator" runat="server" ControlToValidate="sizeDropDownList" ErrorMessage="Please select a size." ForeColor="Red"></asp:RequiredFieldValidator>
+
         </div>
         <div class="form-group">
             <label>Crust:</label>
-            <asp:DropDownList ID="crustDropDownList" runat="server" CssClass="form-control" AutoPostBack="true">
-                <asp:ListItem Text="Choose One..." Selected="True" />
+            <asp:DropDownList ID="crustDropDownList" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="recalculateTotalCost">
+                <asp:ListItem Text="Choose One..." Value="" Selected="True" />
                 <asp:ListItem Text="Regular" Value="Regular" />
                 <asp:ListItem Text="Thin" Value="Thin" />
                 <asp:ListItem Text="Thick (+ $2)" Value="Thick" />
             </asp:DropDownList>
+            <asp:RequiredFieldValidator ID="CrustRequiredFieldValidator" runat="server" ControlToValidate="crustDropDownList" ErrorMessage="Please select a crust type." ForeColor="Red"></asp:RequiredFieldValidator>
 
         </div>
-        <div class="checkbox"><label><asp:CheckBox ID="sausageCheckBox" runat="server" AutoPostBack="true"></asp:CheckBox> Sausage (+ $2)</label></div>
-        <div class="checkbox"><label><asp:CheckBox ID="pepperoniCheckBox" runat="server" AutoPostBack="true"></asp:CheckBox> Pepperoni (+ $1.50)</label></div>
-        <div class="checkbox"><label><asp:CheckBox ID="onionsCheckBox" runat="server" AutoPostBack="true"></asp:CheckBox> Onions (+ $1)</label></div>
-        <div class="checkbox"><label><asp:CheckBox ID="greenpeppersCheckBox" runat="server" AutoPostBack="true"></asp:CheckBox> Green Peppers (+ $1)</label></div>
+        <div class="checkbox"><label><asp:CheckBox ID="sausageCheckBox" runat="server" AutoPostBack="true" OnCheckedChanged="recalculateTotalCost"></asp:CheckBox> Sausage (+ $2)</label></div>
+        <div class="checkbox"><label><asp:CheckBox ID="pepperoniCheckBox" runat="server" AutoPostBack="true" OnCheckedChanged="recalculateTotalCost"></asp:CheckBox> Pepperoni (+ $1.50)</label></div>
+        <div class="checkbox"><label><asp:CheckBox ID="onionsCheckBox" runat="server" AutoPostBack="true" OnCheckedChanged="recalculateTotalCost"></asp:CheckBox> Onions (+ $1)</label></div>
+        <div class="checkbox"><label><asp:CheckBox ID="greenpeppersCheckBox" runat="server" AutoPostBack="true" OnCheckedChanged="recalculateTotalCost"></asp:CheckBox> Green Peppers (+ $1)</label></div>
 
         <h3>Deliver To:</h3>
         <div class="form-group">
