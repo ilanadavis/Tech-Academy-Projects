@@ -12,7 +12,7 @@ namespace FirstChallenge.Controllers
         public ActionResult Index()
         {
             var comic = FirstChallenge.Models.ComicBookManager.GetComicBooks();
-            ViewBag.Header = "My Comics";
+            ViewBag.HeaderValue = "My Comics";
             return View();
         }
     }

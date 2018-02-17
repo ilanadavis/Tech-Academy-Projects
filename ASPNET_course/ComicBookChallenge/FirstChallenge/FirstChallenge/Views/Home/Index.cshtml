@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Index";
 }
-<h1>My Comics</h1>
+<h1>@ViewBag.HeaderValue</h1>
 @foreach (var comic in FirstChallenge.Models.ComicBookManager.GetComicBooks())
 {
     <h2>@comic.ComicTitle</h2>
