@@ -71,6 +71,10 @@ namespace ASP_009.Controllers
             {
                 return HttpNotFound();
             }
+
+            /*
+            var myValue = Request.QueryString["somesuch"];
+            */
             return View(product);
         }
 
