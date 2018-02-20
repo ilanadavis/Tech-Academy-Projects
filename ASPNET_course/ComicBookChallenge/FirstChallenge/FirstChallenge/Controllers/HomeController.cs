@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FirstChallenge.Models;
 
 namespace FirstChallenge.Controllers
 {
@@ -11,9 +12,17 @@ namespace FirstChallenge.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var comic = FirstChallenge.Models.ComicBookManager.GetComicBooks();
+            var comic = ComicBookManager.GetComicBooks();
             ViewBag.HeaderValue = "My Comics";
-            return View();
+            return View(comic);
+        }
+
+        public ActionResult Detail(int id)
+        {
+            var comic = ComicBookManager.GetComicBooks();
+            var comics = comic.FirstOrDefault(p => p.ComicBookId == id);
+            return View(comics);
         }
     }
+
 }

@@ -1,14 +1,17 @@
 ﻿@model List<FirstChallenge.Models.ComicBook>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "My Comics";
 }
 <h1>@ViewBag.HeaderValue</h1>
 @foreach (var comic in FirstChallenge.Models.ComicBookManager.GetComicBooks())
 {
-    <h2>@comic.ComicTitle</h2>
+    <h2>@Html.ActionLink(comic.ComicTitle, "Detail", new { id = comic.ComicBookId })</h2>
     <h3>@(comic.EpisodeNumber + " - " + @comic.EpisodeTitle)</h3>
 
-    <strong> Starring: </strong> @comic.Characters
+    var characters = comic.Characters.Select(p => p.Name).ToArray();
+    var characterstring = String.Join(", ", characters);
+
+    <strong> Starring: </strong> @characterstring;
 
 
 }

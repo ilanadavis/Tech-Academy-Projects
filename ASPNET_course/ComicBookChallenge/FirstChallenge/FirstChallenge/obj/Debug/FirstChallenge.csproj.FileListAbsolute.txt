@@ -35,3 +35,7 @@ F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstCh
 F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\obj\Debug\FirstChallenge.csprojResolveAssemblyReference.cache
 F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\obj\Debug\FirstChallenge.dll
 F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\obj\Debug\FirstChallenge.pdb
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\EntityFramework.dll
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\EntityFramework.SqlServer.dll
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\EntityFramework.xml
+F:\Tech-Academy-Projects\ASPNET_course\ComicBookChallenge\FirstChallenge\FirstChallenge\bin\EntityFramework.SqlServer.xml
