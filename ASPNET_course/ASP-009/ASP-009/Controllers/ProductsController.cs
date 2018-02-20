@@ -48,6 +48,7 @@ namespace ASP_009.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ProductId,Name,Price")] Product product)
         {
+            
             if (ModelState.IsValid)
             {
                 product.ProductId = Guid.NewGuid();
@@ -56,7 +57,21 @@ namespace ASP_009.Controllers
                 return RedirectToAction("Index");
             }
 
+            
+            /*
+            var product = new Product();
+            product.ProductId = Guid.NewGuid();
+            product.Name = Request["Name"];
+            product.Price = Decimal.Parse(Request["Price"]);
+            */
+            /*
+            var product = new Product();
+            product.ProductId = Guid.NewGuid();
+            product.Name = Name;
+            product.Price = Price;
+            */
             return View(product);
+
         }
 
         // GET: Products/Edit/5
