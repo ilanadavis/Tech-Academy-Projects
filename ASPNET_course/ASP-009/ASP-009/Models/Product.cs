@@ -11,10 +11,13 @@ namespace ASP_009.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Product
     {
         public System.Guid ProductId { get; set; }
+
+        [Display(Name="Product Name")]
         public string Name { get; set; }
         public decimal Price { get; set; }
     }
