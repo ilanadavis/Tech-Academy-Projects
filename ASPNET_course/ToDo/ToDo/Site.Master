@@ -13,11 +13,9 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <script src="http://knockoutjs.com/downloads/knockout-3.4.2.js"></script>
-    <script src="/Scripts/ToDo.js"></script>
 </head>
 <body>
-    <form runat="server">
+    <form runat="server" data-bind="submit: addItem">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -83,5 +81,8 @@
             </footer>
         </div>
     </form>
+    <script src="http://knockoutjs.com/downloads/knockout-3.4.2.js" type="text/javascript"></script>
+    <script src="/Scripts/ToDo.js"></script>
+
 </body>
 </html>
